@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Experience - The Rajputana Palace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        :root {
+            --primary-color: #8b4513;
+            --secondary-color: #d2b48c;
+            --accent-color: #cd853f;
+            --text-color: #333;
+            --light-text: #fff;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f5f0;
+            --border-color: #e0d5c1;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display", serif;
+            font-weight: 600;
+        }
+
+        .booking-form-container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .form-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .form-title p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .form-control {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .form-select {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .experience-summary {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .experience-summary h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .experience-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .experience-details span {
+            font-weight: 500;
+        }
+
+        .required-field::after {
+            content: "*";
+            color: red;
+            margin-left: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .booking-form-container {
+                margin: 60px 20px;
+                padding: 20px;
+            }
+
+            .form-title h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .experience-select {
+            margin-bottom: 30px;
+        }
+
+        .experience-select select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            color: var(--text-color);
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .experience-select select:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .experience-select label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .experience-select .required-field::after {
+            content: "*";
+            color: red;
+            margin-left: 4px;
+        }
+
+        .return-home-btn {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .return-home-btn i {
+            margin-right: 8px;
+        }
+
+        .return-home-btn:hover {
+            color: var(--accent-color);
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-form-container">
+        <div class="form-title">
+            <a href="index.html" class="return-home-btn">
+                <i class="fas fa-arrow-left"></i> Return to Home
+            </a>
+            <h1>Book Your Experience</h1>
+            <p>Fill in the details below to reserve your unforgettable experience</p>
+        </div>
+
+        <form id="experience-booking-form" method="POST" action="book_experience.php">
+            <div class="experience-select">
+                <label class="required-field">Select Experience</label>
+                <select id="experience-select" name="experience" class="form-select" required>
+                    <option value="">Choose an experience</option>
+                    <optgroup label="Cultural Experiences">
+                        <option value="Folk Dance Performance" data-duration="2 hours" data-capacity="Up to 20 people">Folk Dance Performance</option>
+                        <option value="Rajasthani Cooking Class" data-duration="3 hours" data-capacity="Up to 10 people">Rajasthani Cooking Class</option>
+                        <option value="Art & Craft Workshop" data-duration="2.5 hours" data-capacity="Up to 15 people">Art & Craft Workshop</option>
+                    </optgroup>
+                    <optgroup label="Adventure Experiences">
+                        <option value="Desert Safari" data-duration="4 hours" data-capacity="Up to 8 people">Desert Safari</option>
+                        <option value="Wildlife Safari" data-duration="6 hours" data-capacity="Up to 6 people">Wildlife Safari</option>
+                        <option value="Hot Air Balloon Ride" data-duration="1 hour" data-capacity="Up to 4 people">Hot Air Balloon Ride</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="experience-summary">
+                <h3>Experience Details</h3>
+                <div class="experience-details">
+                    <span>Experience:</span>
+                    <span id="experience-name">Select an experience</span>
+                </div>
+                <div class="experience-details">
+                    <span>Duration:</span>
+                    <span id="experience-duration">-</span>
+                </div>
+                <div class="experience-details">
+                    <span>Capacity:</span>
+                    <span id="experience-capacity">-</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">First Name</label>
+                        <input type="text" name="firstName" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Last Name</label>
+                        <input type="text" name="lastName" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Phone Number</label>
+                        <input type="tel" name="phone" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Date</label>
+                        <input type="date" name="date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Time</label>
+                        <input type="time" name="time" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required-field">Number of Guests</label>
+                <select name="guests" class="form-select" required>
+                    <option value="">Select number of guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="7">7 Guests</option>
+                    <option value="8">8 Guests</option>
+                    <option value="9">9 Guests</option>
+                    <option value="10">10 Guests</option>
+                    <option value="11">11 Guests</option>
+                    <option value="12">12 Guests</option>
+                    <option value="13">13 Guests</option>
+                    <option value="14">14 Guests</option>
+                    <option value="15">15 Guests</option>
+                    <option value="16">16 Guests</option>
+                    <option value="17">17 Guests</option>
+                    <option value="18">18 Guests</option>
+                    <option value="19">19 Guests</option>
+                    <option value="20">20 Guests</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Special Requirements</label>
+                <textarea name="specialRequirements" class="form-control" rows="4" placeholder="Please let us know if you have any special requirements or preferences"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Book Experience</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const experienceSelect = document.getElementById('experience-select');
+            const experienceName = document.getElementById('experience-name');
+            const experienceDuration = document.getElementById('experience-duration');
+            const experienceCapacity = document.getElementById('experience-capacity');
+
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedExperience = urlParams.get('experience');
+
+            // Update experience details when selection changes
+            experienceSelect.addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                if (selectedOption.value) {
+                    experienceName.textContent = selectedOption.text;
+                    experienceDuration.textContent = selectedOption.dataset.duration;
+                    experienceCapacity.textContent = selectedOption.dataset.capacity;
+                } else {
+                    experienceName.textContent = 'Select an experience';
+                    experienceDuration.textContent = '-';
+                    experienceCapacity.textContent = '-';
+                }
+            });
+
+            // Set initial selection from URL parameter
+            if (selectedExperience) {
+                const option = Array.from(experienceSelect.options).find(opt => 
+                    opt.value === selectedExperience || opt.text === selectedExperience
+                );
+                if (option) {
+                    experienceSelect.value = option.value;
+                    experienceSelect.dispatchEvent(new Event('change'));
+                }
+            }
+        });
+    </script>
+</body>
+</html>

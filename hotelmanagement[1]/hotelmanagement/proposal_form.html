@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Proposal - The Rajputana Palace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        :root {
+            --primary-color: #8b4513;
+            --secondary-color: #d2b48c;
+            --accent-color: #cd853f;
+            --text-color: #333;
+            --light-text: #fff;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f5f0;
+            --border-color: #e0d5c1;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display", serif;
+            font-weight: 600;
+        }
+
+        .proposal-form-container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .form-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .form-title p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .form-control {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .form-select {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .required-field::after {
+            content: "*";
+            color: red;
+            margin-left: 4px;
+        }
+
+        .return-home-btn {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .return-home-btn i {
+            margin-right: 8px;
+        }
+
+        .return-home-btn:hover {
+            color: var(--accent-color);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .proposal-form-container {
+                margin: 60px 20px;
+                padding: 20px;
+            }
+
+            .form-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-form-container">
+        <div class="form-title">
+            <a href="index.html" class="return-home-btn">
+                <i class="fas fa-arrow-left"></i> Return to Home
+            </a>
+            <h1>Request a Proposal</h1>
+            <p>Fill in the details below to receive a customized proposal for your event</p>
+        </div>
+
+        <form id="proposal-form" method="POST" action="process_proposal.php">
+            <!-- Event Details -->
+            <div class="form-group">
+                <label class="form-label required-field">Event Type</label>
+                <select name="event_type" class="form-select" required>
+                    <option value="">Select event type</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="corporate">Corporate Event</option>
+                    <option value="conference">Conference</option>
+                    <option value="social">Social Gathering</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Event Date</label>
+                        <input type="date" name="event_date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Number of Guests</label>
+                        <input type="number" name="guest_count" class="form-control" min="1" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label required-field">Event Location Preference</label>
+                <select name="location" class="form-select" required>
+                    <option value="">Select location</option>
+                    <option value="udaipur">Udaipur - The Rajputana Palace</option>
+                    <option value="bengaluru">Bengaluru - The Rajputana Palace</option>
+                    <option value="newdelhi">New Delhi - The Rajputana Palace</option>
+                </select>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">First Name</label>
+                        <input type="text" name="first_name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Last Name</label>
+                        <input type="text" name="last_name" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label required-field">Phone Number</label>
+                        <input type="tel" name="phone" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Requirements -->
+            <div class="form-group">
+                <label class="form-label">Special Requirements</label>
+                <textarea name="special_requirements" class="form-control" rows="4" placeholder="Please provide any specific requirements or preferences for your event"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Budget Range</label>
+                <select name="budget_range" class="form-select">
+                    <option value="">Select budget range</option>
+                    <option value="budget">Budget Friendly</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="premium">Premium</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Proposal Request</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

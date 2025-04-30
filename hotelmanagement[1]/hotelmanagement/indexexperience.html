@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences - The Rajputana Palace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        /* Global Styles */
+:root {
+  --primary-color: #8b4513;
+  --secondary-color: #d2b48c;
+  --accent-color: #cd853f;
+  --text-color: #333;
+  --light-text: #fff;
+  --dark-bg: #1a1a1a;
+  --light-bg: #f8f5f0;
+  --border-color: #e0d5c1;
+  --gold: #d4af37;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Navbar Styles */
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links-left,
+.nav-links-right {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links-left li,
+.nav-links-right li {
+  margin: 0 15px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-bottom: 5px;
+}
+
+.logo-sub {
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+
+.book-now {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-now:hover {
+  background-color: var(--accent-color);
+}
+
+.book-now a {
+  color: white;
+  text-decoration: none;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary-color);
+} */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    padding: 10px 40px;
+  }
+  
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links-left,
+  .nav-links-right {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links-left li,
+  .nav-links-right li {
+    margin: 0 20px;
+  }
+  
+  .nav-link {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .logo-sub {
+    font-family: "Playfair Display", serif;
+    font-size: 10px;
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+  }
+  
+  .book-now {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  
+  .book-now:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+  }
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1001;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.mobile-menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-links li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu-links a {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.book-now-mobile {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.book-now-mobile a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.experiences-hero {
+  background: url("https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+    no-repeat center center;
+  background-size: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Experiences Section */
+.experiences-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.title-separator {
+  width: 80px;
+  height: 3px;
+  background-color: var(--gold);
+  margin: 0 auto 30px;
+}
+
+.section-description {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+  color: #666;
+}
+
+.category-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.category-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold);
+}
+
+.experience-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.experience-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.experience-card:hover .experience-image img {
+  transform: scale(1.1);
+}
+
+.experience-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover .experience-overlay {
+  opacity: 1;
+}
+
+.experience-content {
+  padding: 25px;
+}
+
+.experience-content h4 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.experience-content p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.experience-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.experience-details span {
+  display: flex;
+  align-items: center;
+}
+
+.experience-details i {
+  margin-right: 5px;
+  color: var(--accent-color);
+}
+
+.book-experience-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.book-experience-btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 80px 0;
+  background-color: #f0e6d6;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.testimonial-content i {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.testimonial-author h5 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.testimonial-author p {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+    no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--gold);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 60px 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+  }
+  
+  .subscription-section {
+    width: 30%;
+    padding: 0 20px 20px 0;
+  }
+  
+  .subscription-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .subscription-form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-form input[type="email"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-right: none;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .subscription-form button {
+    padding: 12px 20px;
+    background-color: #c9a76c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscription-form button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .contact-info {
+    margin-top: 30px;
+  }
+  
+  .contact-heading {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .contact-phone {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a:hover {
+    color: #c9a76c;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .links-section {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    width: 22%;
+    padding: 0 10px;
+  }
+  
+  .footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .copyright {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--primary-color);
+  }
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links-left li,
+  .nav-links-right li {
+    margin: 0 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .footer-column {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links-left,
+  .nav-links-right {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 15px;
+  }
+
+  .footer-links a {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 60vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .subscription-form {
+    flex-direction: column;
+  }
+
+  .subscription-form input {
+    margin-bottom: 10px;
+  }
+}
+
+    </style></head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="mobile-menu-toggle d-md-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links-left">
+                <li><a href="indexroomandsuites.html" class="nav-link">Rooms & Suites</a></li>
+                <li><a href="indexdinning.html" class="nav-link">Dining</a></li>
+                <li><a href="indexexperiences.html" class="nav-link active">Experiences</a></li>
+                <li><a href="indexoffers.html" class="nav-link">Offers</a></li>
+            </ul>
+        </div>
+
+        <div class="logo" > <a href="index.html" class="logo-link">
+          <img src="logo-Photoroom.png" alt="The Rajputana Palace Logo"> </a>
+          <div class="logo-sub">The Rajputana Palace</div>
+      </div>
+
+        <div class="nav-right">
+            <ul class="nav-links-right">
+                <li><a href="indexwellness.html" class="nav-link">Wellness</a></li>
+                <li><a href="indexmeetings.html" class="nav-link">Meetings & Events</a></li>
+                <li class="nav-item dropdown">
+                  Destination
+                 
+                 <ul class="dropdown-menu" aria-labelledby="destinationDropdown">
+                     <li><a class="dropdown-item" href="udaipur.html">Udaipur</a></li>
+                     <li><a class="dropdown-item" href="bengaluru.html">Bengaluru</a></li>
+                     <li><a class="dropdown-item" href="newdelhi.html">New Delhi</a></li>
+                 </ul>
+             </li>
+            </ul>
+            <a href="roombooking.html"><button class="book-now">Book Now</button></a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo-mobile">
+                <img src="logo-Photoroom.png" alt="The Rajputana Palace Logo">
+                <div class="logo-sub">The Rajputana Palace</div>
+            </div>
+            <button class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="indexroomandsuites.html">Rooms & Suites</a></li>
+            <li><a href="indexdinning.html">Dining</a></li>
+            <li><a href="indexexperiences.html">Experiences</a></li>
+            <li><a href="indexoffers.html">Offers</a></li>
+            <li><a href="indexwellness.html">Wellness</a></li>
+            <li><a href="indexmeetings.html">Meetings & Events</a></li>
+            <li><a href="indexdestination.html">Destination</a></li>
+        </ul>
+        <button class="book-now-mobile"><a href="roombooking.html">Book Now</a></button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section experiences-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Unforgettable Experiences</h1>
+            <p>Discover the magic of Rajasthan through our curated experiences</p>
+        </div>
+    </section>
+
+    <!-- Main Experiences Section -->
+    <section class="experiences-section container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Curated Experiences</h2>
+                <div class="title-separator"></div>
+                <p class="section-description">Immerse yourself in the rich culture and heritage of Rajasthan with our exclusive experiences.</p>
+            </div>
+        </div>
+
+        <!-- Cultural Experiences -->
+        <div class="experience-category mb-5">
+            <h3 class="category-title">Cultural Experiences</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="./images/folk_dance.jpg" alt="Folk Dance Performance">
+                        <div class="experience-overlay">
+                            <a href="form.html?experience=Folk Dance Performance" class="book-experience-btn">Book Experience</a>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <h4>Folk Dance Performance</h4>
+                        <p>Experience the vibrant traditional dance forms of Rajasthan, including Kalbeliya, Ghoomar, and Kathak.</p>
+                        <div class="experience-details">
+                            <span><i class="fas fa-clock"></i> 2 hours</span>
+                            <span><i class="fas fa-users"></i> Up to 20 people</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="./images/cooking_classes.jpg" alt="Cooking Class">
+                            <div class="experience-overlay">
+                                <a href="form.html?experience=Rajasthani Cooking Class" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Rajasthani Cooking Class</h4>
+                            <p>Learn to cook authentic Rajasthani dishes from our master chefs in an interactive session.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 3 hours</span>
+                                <span><i class="fas fa-users"></i> Up to 10 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="./images/workshop.jpg" alt="Art & Craft Workshop">
+                            <div class="experience-overlay">
+                                <a href="form.html?experience=Art & Craft Workshop" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Art & Craft Workshop</h4>
+                            <p>Create your own traditional Rajasthani handicrafts under the guidance of local artisans.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 2.5 hours</span>
+                                <span><i class="fas fa-users"></i> Up to 15 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Adventure Experiences -->
+        <div class="experience-category mb-5">
+            <h3 class="category-title">Adventure Experiences</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="./images/desert_safari.webp" alt="Desert Safari">
+                            <div class="experience-overlay">
+                                <a href="form.html?experience=Desert Safari" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Desert Safari</h4>
+                            <p>Embark on an exciting desert safari with camel rides and traditional entertainment.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 4 hours</span>
+                                <span><i class="fas fa-users"></i> Up to 8 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="./images/wildlife_safari.jpg" alt="Wildlife Safari">
+                            <div class="experience-overlay">
+                                <a href="form.html?experience=Wildlife Safari" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Wildlife Safari</h4>
+                            <p>Explore the rich wildlife of Rajasthan with our guided safari tours.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 6 hours</span>
+                                <span><i class="fas fa-users"></i> Up to 6 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="./images/hotair_ballon.jpg" alt="Hot Air Balloon Ride">
+                            <div class="experience-overlay">
+                                <a href="form.html?experience=Hot Air Balloon Ride" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Hot Air Balloon Ride</h4>
+                            <p>Soar above the city and enjoy breathtaking views of the landscape.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 1 hour</span>
+                                <span><i class="fas fa-users"></i> Up to 4 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wellness Experiences -->
+        <!-- <div class="experience-category mb-5">
+            <h3 class="category-title">Wellness Experiences</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="WhatsApp Image 2025-04-12 at 2.36.24 PM.jpeg" alt="Yoga Session">
+                            <div class="experience-overlay">
+                                <a href="#" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Yoga Session</h4>
+                            <p>Start your day with an invigorating yoga session overlooking the sunrise.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 1.5 hours</span>
+                                <span><i class="fas fa-users"></i> Up to 12 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="WhatsApp Image 2025-04-12 at 2.36.32 PM.jpeg" alt="Spa Treatment">
+                            <div class="experience-overlay">
+                                <a href="#" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Traditional Spa Treatment</h4>
+                            <p>Indulge in authentic Rajasthani spa treatments using local herbs and techniques.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 2 hours</span>
+                                <span><i class="fas fa-users"></i> Individual</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="experience-card">
+                        <div class="experience-image">
+                            <img src="WhatsApp Image 2025-04-12 at 2.38.07 PM.jpeg" alt="Meditation Session">
+                            <div class="experience-overlay">
+                                <a href="#" class="book-experience-btn">Book Experience</a>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h4>Meditation Session</h4>
+                            <p>Find inner peace with guided meditation sessions in our serene gardens.</p>
+                            <div class="experience-details">
+                                <span><i class="fas fa-clock"></i> 1 hour</span>
+                                <span><i class="fas fa-users"></i> Up to 15 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="subscription-section">
+            <h2>SUBSCRIBE FOR LATEST UPDATES</h2>
+            <div class="subscription-form">
+                <input type="email" placeholder="Enter your email Address">
+                <button>SUBSCRIBE</button>
+            </div>
+            <div class="contact-info">
+                <div class="contact-heading">FOR BOOKINGS CONTACT</div>
+                <div class="contact-phone">1-800-111-825</div>
+                <div><a href="mailto:reservations@example.com">reservations@example.com</a></div>
+                <div class="contact-heading">CUSTOMER SUPPORT</div>
+                <div><a href="mailto:support@example.com">support@example.com</a></div>
+                <div><a href="mailto:feedback@example.com">feedback@example.com</a></div>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="links-section">
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Hotels & Resorts</a></li>
+                    <li><a href="#">Dining</a></li>
+                    <li><a href="#">Meetings & Socials</a></li>
+                    <li><a href="#">Weddings</a></li>
+                    <li><a href="#">Wellness</a></li>
+                    <li><a href="#">New & Upcoming Hotels</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Social Responsibility</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONNECT WITH US</h3>
+                <ul>
+                    <li><a href="#">Assistance</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">X Concierge</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Hotel Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>TOP DESTINATIONS</h3>
+                <ul>
+                    <li><a href="#">New Delhi Hotels</a></li>
+                    <li><a href="#">Mumbai Hotels</a></li>
+                    <li><a href="#">Chennai Hotels</a></li>
+                    <li><a href="#">Bengaluru Hotels</a></li>
+                    <li><a href="#">Goa Hotels & Resorts</a></li>
+                    <li><a href="#">Hyderabad Hotels</a></li>
+                    <li><a href="#">Kolkata Hotels</a></li>
+                    <li><a href="#">Jaipur Hotels</a></li>
+                    <li><a href="#">Agra Hotels</a></li>
+                    <li><a href="#">All Destinations</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 The Rajputana Palace All Rights Reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu toggle
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle")
+  const mobileMenuClose = document.querySelector(".mobile-menu-close")
+  const mobileMenu = document.querySelector(".mobile-menu")
+
+  if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
+    mobileMenuToggle.addEventListener("click", () => {
+      mobileMenu.style.display = "block"
+      document.body.style.overflow = "hidden"
+    })
+
+    mobileMenuClose.addEventListener("click", () => {
+      mobileMenu.style.display = "none"
+      document.body.style.overflow = "auto"
+    })
+  }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault()
+      const targetId = this.getAttribute("href")
+      if (targetId === "#") return
+
+      const targetElement = document.querySelector(targetId)
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: "smooth",
+        })
+      }
+    })
+  })
+
+  // Add animation on scroll
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll(".experience-card, .testimonial-card")
+
+    elements.forEach((element) => {
+      const elementPosition = element.getBoundingClientRect().top
+      const windowHeight = window.innerHeight
+
+      if (elementPosition < windowHeight - 100) {
+        element.style.opacity = "1"
+        element.style.transform = "translateY(0)"
+      }
+    })
+  }
+
+  // Initialize animation
+  window.addEventListener("scroll", animateOnScroll)
+  animateOnScroll() // Run once on page load
+})
+
+
+</script>
+   
+</body>
+</html>

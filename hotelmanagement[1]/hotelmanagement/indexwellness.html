@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rajputana Palace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+        :root {
+    --primary-color: #c9a76c;
+    --secondary-color: #e67e22;
+    --text-color: #333;
+    --light-text: #555;
+    --background-color: #fff;
+    --border-color: #ddd;
+    --hover-color: #b45309;
+    --link-color: #3b82f6;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    padding: 10px 40px;
+  }
+  
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links-left,
+  .nav-links-right {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links-left li,
+  .nav-links-right li {
+    margin: 0 20px;
+  }
+  
+  .nav-link {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .logo-sub {
+    font-family: "Playfair Display", serif;
+    font-size: 10px;
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+  }
+  
+  .book-now {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  
+  .book-now:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Main Carousel */
+  .carousel-container {
+    position: relative;
+  }
+  
+  .carousel-inner {
+    height: 90vh;
+    max-height: 800px;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Booking Section */
+  .booking-section {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  .booking-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .booking-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .booking-item label {
+    font-size: 12px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+  }
+  
+  .booking-item select,
+  .booking-item input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .availability-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    white-space: nowrap;
+  }
+  
+  .availability-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+  }
+  /* Spa Section */
+  .spa-section {
+            padding: 80px 0;
+        }
+
+        .spa-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .spa-description {
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .spa-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .note {
+            font-weight: 500;
+            margin-top: 30px;
+        }
+
+        .timings {
+            margin-top: 15px;
+        }
+
+        /* Therapies Section */
+        .therapies-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .therapies-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .filters-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .filters-label {
+            font-weight: 500;
+            margin-right: 20px;
+        }
+
+        .filters-dropdown {
+            border: none;
+            background-color: transparent;
+            color: var(--light-text);
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .therapy-card {
+            margin-bottom: 50px;
+        }
+
+        .therapy-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .therapy-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .therapy-description {
+            color: var(--light-text);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .explore-link {
+            color: #5bc0de;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .explore-link i {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        .explore-link:hover {
+            color: #31b0d5;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .booking-widget {
+                margin-top: 0;
+                border-radius: 0;
+            }
+            
+            .spa-image {
+                height: 300px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 50vh;
+            }
+            
+            .booking-widget .row > div {
+                margin-bottom: 15px;
+            }
+            
+            .therapy-image {
+                height: 250px;
+            }
+        }
+        .logo-sub {
+    font-family: "Playfair Display", serif;
+    font-size: 10px;
+    color: #c9a76c;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+  }
+  /* Footer */
+  footer {
+    background-color: #f9f9f9;
+    color: var(--text-color);
+    padding: 60px 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .subscription-section {
+    width: 30%;
+    padding: 0 20px 20px 0;
+  }
+  
+  .subscription-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .subscription-form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-form input[type="email"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-right: none;
+    background-color: #fff;
+    color: var(--text-color);
+  }
+  
+  .subscription-form button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscription-form button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .contact-info {
+    margin-top: 30px;
+  }
+  
+  .contact-heading {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .contact-phone {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a:hover {
+    color: var(--primary-color);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #eee;
+    color: var(--text-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .links-section {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    width: 22%;
+    padding: 0 10px;
+  }
+  
+  .footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .copyright {
+    font-size: 14px;
+    color: var(--light-text);
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: var(--light-text);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .welcome-rajasthan-section,
+    .room-section,
+    .booking-section {
+      max-width: 95%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .navbar {
+      padding: 15px 20px;
+    }
+  
+    .nav-links-left li,
+    .nav-links-right li {
+      margin: 0 10px;
+    }
+  
+    .welcome-rajasthan-section {
+      flex-direction: column;
+    }
+  
+    .welcome-rajasthan-carousel-container,
+    .welcome-rajasthan-text {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+  
+    .welcome-rajasthan-carousel-container {
+      height: 400px;
+      border-radius: 8px 8px 0 0;
+    }
+  
+    .welcome-rajasthan-text {
+      border-radius: 0 0 8px 8px;
+    }
+  
+    .subscription-section {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  
+    .links-section {
+      width: 100%;
+    }
+  
+    .footer-column {
+      width: 48%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links-left,
+    .nav-links-right {
+      display: none;
+    }
+  
+    .mobile-menu-toggle {
+      display: block;
+    }
+  
+    .booking-section {
+      position: relative;
+      bottom: 0;
+      transform: none;
+      left: 0;
+      width: 100%;
+      border-radius: 0;
+      padding: 20px;
+    }
+  
+    .booking-form {
+      flex-direction: column;
+    }
+  
+    .booking-item {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  
+    .availability-btn {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .carousel-caption {
+      bottom: 10%;
+      left: 5%;
+      max-width: 90%;
+    }
+  
+    .carousel-caption h2 {
+      font-size: 2rem;
+    }
+  
+    .carousel-caption p {
+      font-size: 1rem;
+    }
+  
+    .room-carousel-control {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .footer-column {
+      width: 100%;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .copyright {
+      margin-bottom: 15px;
+    }
+  
+    .footer-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-inner {
+      height: 70vh;
+    }
+  
+    .welcome-rajasthan-title {
+      font-size: 2rem;
+    }
+  
+    .room-header h2,
+    .restaurant-heading,
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .room-description h3,
+    .restaurant-name {
+      font-size: 1.8rem;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="mobile-menu-toggle d-md-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links-left">
+                <li><a href="indexroomandsuites.html" class="nav-link">Rooms & Suites</a></li>
+                <li><a href="indexdinning.html" class="nav-link">Dining</a></li>
+                <li><a href="#" class="nav-link">Experiences</a></li>
+                <li><a href="#" class="nav-link">Offers</a></li>
+            </ul>
+        </div>
+
+        <div class="logo" > <a href="index.html" class="logo-link">
+          <img src="logo-Photoroom.png" alt="The Rajputana Palace Logo"> </a>
+          <div class="logo-sub">The Rajputana Palace</div>
+      </div>
+
+        <div class="nav-right">
+            <ul class="nav-links-right">
+                <li><a href="indexwellness.html" class="nav-link">Wellness</a></li>
+                <li><a href="indexmeetings.html" class="nav-link">Meetings & Events</a></li>
+                <li class="nav-item dropdown">
+                  Destination
+                 
+                 <ul class="dropdown-menu" aria-labelledby="destinationDropdown">
+                     <li><a class="dropdown-item" href="udaipur.html">Udaipur</a></li>
+                     <li><a class="dropdown-item" href="bengaluru.html">Bengaluru</a></li>
+                     <li><a class="dropdown-item" href="newdelhi.html">New Delhi</a></li>
+                 </ul>
+             </li>
+            </ul>
+            <a href="roombooking.html"><button class="book-now">Book Now</button></a>
+        </div>
+    </nav>
+
+    <!-- Main Carousel -->
+    <div class="carousel-container">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="WhatsApp Image 2025-04-12 at 2.38.07 PM.jpeg" class="d-block w-100" alt="Hotel Exterior">
+                    <!-- <div class="carousel-caption">
+                        <h2>Experience Luxury in Udaipur</h2>
+                        <p>Discover the royal heritage of Rajasthan at The Oberoi Udayvilas</p>
+                    </div> -->
+                </div>
+                <div class="carousel-item">
+                    <img src="WhatsApp Image 2025-04-12 at 2.36.32 PM.jpeg" class="d-block w-100" alt="Hotel Pool">
+                    <!-- <div class="carousel-caption">
+                        <h2>Unwind in Elegance</h2>
+                        <p>Relax by our stunning pools with panoramic lake views</p>
+                    </div> -->
+                </div>
+                <div class="carousel-item">
+                    <img src="WhatsApp Image 2025-04-12 at 2.36.24 PM.jpeg" class="d-block w-100" alt="Hotel Garden">
+                    <!-- <div class="carousel-caption">
+                        <h2>Lush Gardens</h2>
+                        <p>Stroll through our meticulously maintained gardens</p>
+                    </div> -->
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    
+        <!-- Booking Section -->
+        <section class="booking-section">
+            <form action="/submit-booking" method="POST" class="booking-form">
+                <div class="booking-item">
+                    <label for="location">Location:</label>
+                    <select name="location" id="location">
+                        <option>Udaipur - The Rajputana Palace</option>
+                        <option>Bengaluru - The Rajputana Palace</option>
+                        <option>New Delhi - The Rajputana Palace</option>
+                    </select>
+                </div>
+    
+                <div class="booking-item">
+                    <label for="checkin_date">Check-In:</label>
+                    <input type="date" id="checkin_date" name="checkin_date" required>
+                </div>
+    
+                <div class="booking-item">
+                    <label for="checkout_date">Check-Out:</label>
+                    <input type="date" id="checkout_date" name="checkout_date" required>
+                </div>
+    
+                <div class="booking-item">
+                    <label for="rooms">Rooms:</label>
+                    <select name="rooms" id="rooms">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                    </select>
+                </div>
+
+                <div class="booking-item">
+                    <label for="guests">Guests:</label>
+                    <select name="guests" id="guests">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                    </select>
+                </div>
+                 <!-- New Room Type Field -->
+                 <div class="booking-item">
+                  <label for="room_type">Room Type:</label>
+                  <select name="room_type" id="room_type">
+                      <option>Deluxe Room</option>
+                      <option>Luxury Suite</option>
+                      <option>Presidential Suite</option>
+                      <option>Garden View Room</option>
+                      <option>Lake View Room</option>
+                  </select>
+              </div>
+                
+                <button type="button" class="availability-btn">View Availability</button>
+            </form>
+        </section>
+    </div>
+    <section class="spa-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="spa-title">The Rajputana Palace Spa</h1>
+                    <p class="spa-description">Take yourself out of the city without leaving it at The Rajputana Palace Spa, swimming pool and fitness centre in Rajasthan.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-6">
+                    <img src="./images/spa.jpeg" alt="The Oberoi Spa" class="spa-image">
+                </div>
+                <div class="col-lg-6">
+                    <p class="spa-description">Our spa is a haven of peace and serenity. A fresh, modern space with private treatment rooms and steam facilities.</p>
+                    <p class="spa-description">At The Rajputana Palace Spa, therapists well versed in the art of imparting wellness will guide you through elevating experiences that result in reduced stress, skin revitalisation and relaxation.</p>
+                    <p class="note"><strong>Note:</strong> The Rajputana Palace spa is for the exclusive use of our resident guests only.</p>
+                    <p class="timings"><strong>Timings:</strong> 08:00 am to 12:00 am (midnight)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Therapies Section -->
+    <section class="therapies-section">
+        <div class="container">
+            <h2 class="therapies-title">Our spa therapies</h2>
+            
+            <!-- <div class="filters-bar">
+                <span class="filters-label">Filters</span>
+                <select class="filters-dropdown">
+                    <option>Therapies</option>
+                </select>
+            </div> -->
+            
+            <div class="row">
+                <!-- First Row of Therapies -->
+                <div class="col-lg-4">
+                    <div class="therapy-card">
+                        <img src="./images/rajputanaExperiences.webp" alt=" Experiences" class="therapy-image">
+                        <h3 class="therapy-title">Rajputana Experiences</h3>
+                        <p class="therapy-description">The journey begins with long massage prepared with Indian herbs and warm therapeutic oil. </p>
+                        <!-- <a href="#" class="explore-link">EXPLORE <i class="fas fa-chevron-right"></i></a> -->
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="therapy-card">
+                        <img src="./images/massage.jpeg" alt="Massage" class="therapy-image">
+                        <h3 class="therapy-title">Massage</h3>
+                        <p class="therapy-description">The treatment starts with a full body exfoliation to slough away dead skin cells. </p>
+                        <!-- <a href="#" class="explore-link">EXPLORE <i class="fas fa-chevron-right"></i></a> -->
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="therapy-card">
+                        <img src="./images/bodbytreatement.jpeg" alt="Body Treatments" class="therapy-image">
+                        <h3 class="therapy-title">Body Treatments.</h3>
+                        <p class="therapy-description">Our sensorial treatments are designed for holistic experiences that release tension, ease muscular knots and stimulate the flow of energy. </p>
+                        <!-- <a href="#" class="explore-link">EXPLORE <i class="fas fa-chevron-right"></i></a> -->
+                    </div>
+                </div>
+                
+                <!-- Second Row of Therapies -->
+                <div class="col-lg-4">
+                    <div class="therapy-card">
+                        <img src="./images/indiantreatement.jpeg" alt="Indian Treatments" class="therapy-image">
+                        <h3 class="therapy-title">Indian Treatments.</h3>
+                        <p class="therapy-description">Treatments offered under this section are Ayurveda </p>
+                        <!-- <a href="#" class="explore-link">EXPLORE <i class="fas fa-chevron-right"></i></a> -->
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="therapy-card">
+                        <img src="./images/Thermal Infusing Facial.webp" alt="Facial Treatments" class="therapy-image">
+                        <h3 class="therapy-title">Facial Treatments.</h3>
+                        <p class="therapy-description">Pick from our range of specially curated facial treatments to relax, refresh and revitalise your skin; leaving you with radiant skin as well as feeling and looking younger.</p>
+                        <!-- <a href="#" class="explore-link">EXPLORE <i class="fas fa-chevron-right"></i></a> -->
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="therapy-card">
+                        <img src="./images/yoga_streacth.jpeg" alt="Yoga Stretch & Daily Reflections" class="therapy-image">
+                        <h3 class="therapy-title">Yoga Stretch & Daily Reflections.</h3>
+                        <p class="therapy-description">These include postures and breathing techniques that will help you attain a state of wellbeing and serenity. </p>
+                        <!-- <a href="#" class="explore-link">EXPLORE <i class="fas fa-chevron-right"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="subscription-section">
+            <h2>SUBSCRIBE FOR LATEST UPDATES</h2>
+            <div class="subscription-form">
+                <input type="email" placeholder="Enter your email Address">
+                <button>SUBSCRIBE</button>
+            </div>
+            <div class="contact-info">
+                <div class="contact-heading">FOR BOOKINGS CONTACT</div>
+                <div class="contact-phone">1-800-111-825</div>
+                <div><a href="mailto:reservations@example.com">reservations@example.com</a></div>
+                <div class="contact-heading">CUSTOMER SUPPORT</div>
+                <div><a href="mailto:support@example.com">support@example.com</a></div>
+                <div><a href="mailto:feedback@example.com">feedback@example.com</a></div>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="links-section">
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Hotels & Resorts</a></li>
+                    <li><a href="#">Dining</a></li>
+                    <li><a href="#">Meetings & Socials</a></li>
+                    <li><a href="#">Weddings</a></li>
+                    <li><a href="#">Wellness</a></li>
+                    <li><a href="#">New & Upcoming Hotels</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Social Responsibility</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONNECT WITH US</h3>
+                <ul>
+                    <li><a href="#">Assistance</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">X Concierge</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Hotel Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>TOP DESTINATIONS</h3>
+                <ul>
+                    <li><a href="#">New Delhi Hotels</a></li>
+                    <li><a href="#">Mumbai Hotels</a></li>
+                    <li><a href="#">Chennai Hotels</a></li>
+                    <li><a href="#">Bengaluru Hotels</a></li>
+                    <li><a href="#">Goa Hotels & Resorts</a></li>
+                    <li><a href="#">Hyderabad Hotels</a></li>
+                    <li><a href="#">Kolkata Hotels</a></li>
+                    <li><a href="#">Jaipur Hotels</a></li>
+                    <li><a href="#">Agra Hotels</a></li>
+                    <li><a href="#">All Destinations</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 The Rajputana Palace All Rights Reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize date pickers (in a real implementation)
+            // This is just a placeholder for where you would initialize date pickers
+            
+            // Ensure all therapy images have the same height
+            function equalizeImageHeights() {
+                const therapyImages = document.querySelectorAll('.therapy-image');
+                let maxHeight = 0;
+                
+                // Reset heights first
+                therapyImages.forEach(img => {
+                    img.style.height = 'auto';
+                    const height = img.offsetHeight;
+                    maxHeight = Math.max(maxHeight, height);
+                });
+                
+                // Set all to max height
+                therapyImages.forEach(img => {
+                    img.style.height = maxHeight + 'px';
+                });
+            }
+            
+            // Run on load and resize
+            window.addEventListener('load', equalizeImageHeights);
+            window.addEventListener('resize', equalizeImageHeights);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Mobile navigation toggle
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function() {
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
+            
+            // Filters dropdown functionality
+            const filtersDropdown = document.querySelector('.filters-dropdown');
+            if (filtersDropdown) {
+                filtersDropdown.addEventListener('change', function() {
+                    console.log('Filter changed to:', this.value);
+                    // In a real implementation, this would filter the therapies
+                });
+            }
+            
+            // Explore links functionality
+            const exploreLinks = document.querySelectorAll('.explore-link');
+            exploreLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const therapyTitle = this.closest('.therapy-card').querySelector('.therapy-title').textContent;
+                    console.log('Exploring:', therapyTitle);
+                    // In a real implementation, this would navigate to a detailed page
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay - The Rajputana Palace</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <!-- Custom CSS -->
+    <style>:root {
+        --primary-color: #c9a76c;
+        --text-color: #333;
+        --light-text: #666;
+        --border-color: #e5e5e5;
+        --hover-color: #b8860b;
+        --accent-color: #e67e22;
+        --accent-hover: #d35400;
+        --light-bg: #f9f9f9;
+        --success-color: #27ae60;
+      }
+      
+      /* Typography */
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: #fff;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+      }
+      
+      /* Navigation */
+      .navbar {
+        background-color: white;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+        z-index: 1000;
+      }
+      
+      .navbar-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 !important;
+      }
+      
+      .navbar-brand img {
+        height: 45px;
+      }
+      
+      .logo-sub {
+        font-family: "Playfair Display", serif;
+        font-size: 10px;
+        color: var(--primary-color);
+        letter-spacing: 1.5px;
+        margin-top: 5px;
+      }
+      
+      .navbar .nav-link {
+        color: var(--text-color);
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+      }
+      
+      .navbar .nav-link:hover {
+        color: var(--primary-color);
+      }
+      
+      .navbar .nav-link.active {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+      
+      .book-now-btn {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.3s;
+        border-radius: 0;
+      }
+      
+      .book-now-btn:hover, .book-now-btn.active {
+        background-color: var(--accent-hover);
+        color: white;
+      }
+      
+      /* Booking Hero Section */
+      .booking-hero {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+      
+      .booking-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      
+      .booking-hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+      
+      /* Booking Section */
+      .booking-section {
+        padding: 60px 0;
+        background-color: #f5f5f5;
+      }
+      
+      .booking-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      
+      /* Booking Steps */
+      .booking-steps {
+        background-color: #f9f9f9;
+        padding: 30px 20px;
+        height: 100%;
+        border-right: 1px solid var(--border-color);
+      }
+      
+      .step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+      
+      .step.active {
+        opacity: 1;
+      }
+      
+      .step-number {
+        width: 40px;
+        height: 40px;
+        background-color: var(--light-text);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+      }
+      
+      .step.active .step-number {
+        background-color: var(--primary-color);
+      }
+      
+      .step-text h5 {
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+      
+      .step-text p {
+        margin-bottom: 0;
+        font-size: 14px;
+        color: var(--light-text);
+      }
+      
+      /* Booking Form Container */
+      .booking-form-container {
+        padding: 40px;
+      }
+      
+      .form-section-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        color: var(--text-color);
+        font-style: italic;
+      }
+      
+      /* Room Options */
+      .room-options {
+        margin-top: 30px;
+      }
+      
+      .room-option {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+      
+      .room-option:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .room-img {
+        border-radius: 5px;
+        height: 150px;
+        object-fit: cover;
+      }
+      
+      .room-option h4 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: var(--text-color);
+      }
+      
+      .room-features {
+        list-style: none;
+        padding: 0;
+        margin: 15px 0 0;
+      }
+      
+      .room-features li {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      
+      .room-features li i {
+        color: var(--primary-color);
+        margin-right: 8px;
+      }
+      
+      .room-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        margin-top: 10px;
+      }
+      
+      .room-price span {
+        font-size: 1rem;
+        font-weight: normal;
+        color: var(--light-text);
+      }
+      
+      .select-room-btn {
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        padding: 8px 20px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      
+      .select-room-btn:hover, .select-room-btn.selected {
+        background-color: var(--primary-color);
+        color: white;
+      }
+      
+      /* Form Navigation */
+      .form-navigation {
+        margin-top: 30px;
+      }
+      
+      .next-btn {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      
+      .next-btn:hover {
+        background-color: var(--hover-color);
+        color: white;
+      }
+      
+      .next-btn:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      
+      .back-btn {
+        background-color: #f1f1f1;
+        color: var(--text-color);
+        border: none;
+        padding: 10px 25px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      
+      .back-btn:hover {
+        background-color: #e5e5e5;
+      }
+      
+      /* Payment Section */
+      .payment-options {
+        margin-bottom: 30px;
+      }
+      
+      .payment-icons {
+        margin-left: 10px;
+      }
+      
+      .payment-icons i {
+        font-size: 1.2rem;
+        margin-right: 5px;
+        color: var (--primary-color);
+      }
+      
+      /* Booking Summary */
+      .booking-summary {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+      }
+      
+      .booking-summary h4 {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+      }
+      
+      .summary-item {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .summary-item.total {
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-top: 2px solid var(--border-color);
+        border-bottom: none;
+        padding-top: 15px;
+        margin-top: 10px;
+      }
+      
+      .terms-link {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+      
+      .terms-link:hover {
+        text-decoration: underline;
+      }
+      
+      /* Confirmation Step */
+      .confirmation-message {
+        text-align: center;
+        padding: 30px 0;
+      }
+      
+      .confirmation-icon {
+        font-size: 5rem;
+        color: var(--success-color);
+        margin-bottom: 20px;
+      }
+      
+      .booking-reference {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        display: inline-block;
+      }
+      
+      .booking-details {
+        margin-top: 40px;
+      }
+      
+      .detail-item {
+        margin-bottom: 15px;
+      }
+      
+      .detail-label {
+        font-weight: bold;
+        color: var(--light-text);
+        font-size: 14px;
+      }
+      
+      .detail-value {
+        font-size: 16px;
+      }
+      
+      .what-next {
+        margin-top: 40px;
+      }
+      
+      .next-steps {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .next-steps li {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      
+      .next-steps li i {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-right: 20px;
+        margin-top: 5px;
+      }
+      
+      .next-steps li h5 {
+        margin-bottom: 5px;
+      }
+      
+      .return-home-btn {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      
+      .return-home-btn:hover {
+        background-color: var(--hover-color);
+        color: white;
+      }
+      
+      /* Footer */
+      footer {
+        background-color: #f9f9f9;
+        color: var(--text-color);
+        padding: 60px 0 20px;
+        border-top: 1px solid var(--border-color);
+      }
+      
+      .footer-heading {
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      
+      .subscription-form {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      
+      .subscription-form input[type="email"] {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-right: none;
+        background-color: #fff;
+        color: var (--text-color);
+      }
+      
+      .subscribe-btn {
+        padding: 12px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+      
+      .subscribe-btn:hover {
+        background-color: var(--hover-color);
+      }
+      
+      .contact-heading {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      
+      .contact-phone {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+      
+      .contact-info a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .contact-info a:hover {
+        color: var(--primary-color);
+      }
+      
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: #eee;
+        color: var(--text-color);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+      }
+      
+      .footer-links {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+      
+      .footer-links li a {
+        text-decoration: none;
+        color: var(--light-text);
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-links li a:hover {
+        color: var(--primary-color);
+      }
+      
+      .footer-bottom {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .copyright {
+        font-size: 14px;
+        color: var(--light-text);
+        margin-bottom: 10px;
+      }
+      
+      .footer-policy-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      
+      .footer-policy-links a {
+        color: var(--light-text);
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .footer-policy-links a:hover {
+        color: var(--primary-color);
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .booking-steps {
+          border-right: none;
+          border-bottom: 1px solid var(--border-color);
+          margin-bottom: 30px;
+          padding-bottom: 20px;
+        }
+        
+        .step {
+          margin-bottom: 15px;
+        }
+        
+        .booking-form-container {
+          padding: 30px 20px;
+        }
+        
+        .room-option {
+          padding: 15px;
+        }
+        
+        .room-img {
+          margin-bottom: 15px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .booking-hero h1 {
+          font-size: 2.5rem;
+        }
+        
+        .form-section-title {
+          font-size: 1.5rem;
+        }
+        
+        .room-price {
+          text-align: left;
+          margin-top: 15px;
+        }
+        
+        .room-option .col-md-3 {
+          text-align: left !important;
+        }
+        
+        .select-room-btn {
+          margin-top: 10px;
+        }
+        
+        .form-navigation {
+          flex-direction: column;
+          gap: 10px;
+        }
+        
+        .form-navigation button {
+          width: 100%;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .booking-hero {
+          padding: 40px 0;
+        }
+        
+        .booking-hero h1 {
+          font-size: 2rem;
+        }
+        
+        .booking-section {
+          padding: 30px 0;
+        }
+        
+        .booking-form-container {
+          padding: 20px 15px;
+        }
+        
+        .confirmation-icon {
+          font-size: 4rem;
+        }
+        
+        .next-steps li {
+          flex-direction: column;
+        }
+        
+        .next-steps li i {
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+      }</style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexroomandsuites.html">ROOMS & SUITES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexdinning.html">DINING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexexperience.html">EXPERIENCES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexoffers.html">OFFERS</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand mx-auto" href="index.html">
+                    <img src="logo-Photoroom.png" alt="The Rajputana Palace Logo">
+                    <div class="logo-sub">The Rajputana Palace</div>
+                </a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexwellness.html">WELLNESS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexmeetings.html">MEETINGS & EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">DESTINATION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn book-now-btn active" href="booking.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Hero Section -->
+    <div class="booking-hero">
+        <div class="container">
+            <h1 class="text-center">Book Your Luxurious Stay</h1>
+            <p class="text-center">Experience the royal hospitality of Rajasthan</p>
+        </div>
+    </div>
+
+    <!-- Booking Form Section -->
+    <div class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="row">
+                    <!-- Booking Steps -->
+                    <div class="col-lg-3">
+                        <div class="booking-steps">
+                            <div class="step active" id="step1">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h5>Dates & Rooms</h5>
+                                    <p>Select your stay details</p>
+                                </div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h5>Guest Information</h5>
+                                    <p>Tell us about yourself</p>
+                                </div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h5>Payment</h5>
+                                    <p>Secure payment options</p>
+                                </div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <h5>Confirmation</h5>
+                                    <p>Review your booking</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <div class="col-lg-9">
+                        <div class="booking-form-container">
+                            <!-- Step 1: Dates & Rooms -->
+                            <div class="booking-form-step" id="bookingStep1">
+                                <h3 class="form-section-title">Select Your Stay Dates</h3>
+                                <div class="row mb-4">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="checkInDate" class="form-label">Check-in Date</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control datepicker" id="checkInDate" placeholder="Select date" required>
+                                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="checkOutDate" class="form-label">Check-out Date</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control datepicker" id="checkOutDate" placeholder="Select date" required>
+                                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="adults" class="form-label">Adults</label>
+                                        <select class="form-select" id="adults" required>
+                                            <option value="1">1 Adult</option>
+                                            <option value="2" selected>2 Adults</option>
+                                            <option value="3">3 Adults</option>
+                                            <option value="4">4 Adults</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="children" class="form-label">Children</label>
+                                        <select class="form-select" id="children">
+                                            <option value="0" selected>No Children</option>
+                                            <option value="1">1 Child</option>
+                                            <option value="2">2 Children</option>
+                                            <option value="3">3 Children</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="location-selection mb-4">
+                                    <h3 class="form-section-title">Select Your Location</h3>
+                                    <select class="form-select" id="locationSelect">
+                                        <option value="Udaipur">Udaipur</option>
+                                        <option value="Bengaluru">Bengaluru</option>
+                                        <option value="New Delhi">New Delhi</option>
+                                    </select>
+                                </div>
+
+                                <div class="selected-location">
+                                    <p>Selected Location: <span id="selectedLocation">Udaipur</span></p>
+                                </div>
+
+                                <h3 class="form-section-title">Select Your Room</h3>
+                                <div class="room-options">
+                                    <!-- Deluxe Room -->
+                                    <div class="room-option">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img src="images/Dexule_room.webp" alt="Deluxe Room" class="img-fluid room-img">
+                                            </div>
+                                            <div class="col-md-5">
+                                                <h4>Deluxe Room</h4>
+                                                <p>Experience luxury in our spacious Deluxe Room featuring a king-size bed, elegant décor, and modern amenities.</p>
+                                                <ul class="room-features">
+                                                    <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                                                    <li><i class="fas fa-tv"></i> 55" Smart TV</li>
+                                                    <li><i class="fas fa-bath"></i> Premium Bathroom</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 text-end">
+                                                <div class="room-price">₹12,500<span>/night</span></div>
+                                                <button class="btn select-room-btn" data-room="Deluxe Room" data-price="12500">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Premium Suite -->
+                                    <div class="room-option">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img src="images/Luxury_room.jpg" alt="Premium Suite" class="img-fluid room-img">
+                                            </div>
+                                            <div class="col-md-5">
+                                                <h4>Luxury Room</h4>
+                                                <p>Our Luxury Room offers a separate living area, luxurious bedroom, and stunning views of the city or garden.</p>
+                                                <ul class="room-features">
+                                                    <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                                                    <li><i class="fas fa-tv"></i> 65" Smart TV</li>
+                                                    <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                                                    <li><i class="fas fa-concierge-bell"></i> Butler Service</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 text-end">
+                                                <div class="room-price">₹18,500<span>/night</span></div>
+                                                <button class="btn select-room-btn" data-room="Premium Suite" data-price="18500">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Royal Suite -->
+                                    <div class="room-option">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img src="images/Executive_suite.jpeg" alt="Royal Suite" class="img-fluid room-img">
+                                            </div>
+                                            <div class="col-md-5">
+                                                <h4>Executive Suite</h4>
+                                                <p>The epitome of luxury, our Executive Suite features a spacious living room, dining area, private terrace, and personalized service.</p>
+                                                <ul class="room-features">
+                                                    <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                                                    <li><i class="fas fa-tv"></i> 75" Smart TV</li>
+                                                    <li><i class="fas fa-bath"></i> Private Plunge Pool</li>
+                                                    <li><i class="fas fa-concierge-bell"></i> 24/7 Butler Service</li>
+                                                    <li><i class="fas fa-utensils"></i> Complimentary Breakfast</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 text-end">
+                                                <div class="room-price">₹32,000<span>/night</span></div>
+                                                <button class="btn select-room-btn" data-room="Royal Suite" data-price="32000">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="room-option">
+                                  <div class="row">
+                                      <div class="col-md-4">
+                                          <img src="images/Premier_room.jpg" alt="Premium Suite" class="img-fluid room-img">
+                                      </div>
+                                      <div class="col-md-5">
+                                          <h4>Premium Room</h4>
+                                          <p>Our Premium Room offers a separate living area, luxurious bedroom, and stunning views of the city or garden.</p>
+                                          <ul class="room-features">
+                                              <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                                              <li><i class="fas fa-tv"></i> 65" Smart TV</li>
+                                              <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                                              <li><i class="fas fa-concierge-bell"></i> Butler Service</li>
+                                          </ul>
+                                      </div>
+                                      <div class="col-md-3 text-end">
+                                          <div class="room-price">₹18,500<span>/night</span></div>
+                                          <button class="btn select-room-btn" data-room="Premium Suite" data-price="18500">Select</button>
+                                      </div>
+                                  </div>
+                              </div>
+
+
+                              <div class="room-option">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/Delux_suite.jpeg" alt="Premium Suite" class="img-fluid room-img">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <h4>Deluxe Suite</h4>
+                                        <p>Our Deeluxe Suite offers a separate living area, luxurious bedroom, and stunning views of the city or garden.</p>
+                                        <ul class="room-features">
+                                            <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                                            <li><i class="fas fa-tv"></i> 65" Smart TV</li>
+                                            <li><i class="fas fa-bath"></i> Jacuzzi</li>
+                                            <li><i class="fas fa-concierge-bell"></i> Butler Service</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3 text-end">
+                                        <div class="room-price">₹18,500<span>/night</span></div>
+                                        <button class="btn select-room-btn" data-room="Premium Suite" data-price="18500">Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                              
+                    
+                                <div class="room-amount">
+                                    <p>Selected Room Amount: ₹<span id="roomAmount">0</span></p>
+                                </div>
+
+                                
+                                <script>
+                                    function updateRoomAmount() {
+                                        const roomType = document.getElementById("roomType");
+                                        const roomAmount = document.getElementById("roomAmount");
+                                        roomAmount.textContent = roomType.value;
+                                    }
+                                </script>
+
+                                <div class="form-navigation text-end mt-4">
+                                    <button class="btn next-btn" id="toStep2" disabled>Continue to Guest Information</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Guest Information -->
+                            <div class="booking-form-step d-none" id="bookingStep2">
+                                <h3 class="form-section-title">Guest Information</h3>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12 mb-3">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="address" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="zipCode" class="form-label">Postal/Zip Code</label>
+                                        <input type="text" class="form-control" id="zipCode" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="country" class="form-label">Country</label>
+                                        <select class="form-select" id="country" required>
+                                            <option value="">Select Country</option>
+                                            <option value="India" selected>India</option>
+                                            <option value="United States">United States</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="France">France</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Singapore">Singapore</option>
+                                            <option value="UAE">UAE</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="specialRequests" class="form-label">Special Requests</label>
+                                        <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requests or preferences?"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-navigation d-flex justify-content-between mt-4">
+                                    <button class="btn back-btn" id="backToStep1">Back to Dates & Rooms</button>
+                                    <button class="btn next-btn" id="toStep3">Continue to Payment</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Payment -->
+                            <div class="booking-form-step d-none" id="bookingStep3">
+                                <h3 class="form-section-title">Payment Information</h3>
+                                <div class="payment-options mb-4">
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                                        <label class="form-check-label" for="creditCard">
+                                            Credit Card
+                                            <span class="payment-icons">
+                                                <i class="fab fa-cc-visa"></i>
+                                                <i class="fab fa-cc-mastercard"></i>
+                                                <i class="fab fa-cc-amex"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="debitCard">
+                                        <label class="form-check-label" for="debitCard">
+                                            Debit Card
+                                            <span class="payment-icons">
+                                                <i class="fab fa-cc-visa"></i>
+                                                <i class="fab fa-cc-mastercard"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="upi">
+                                        <label class="form-check-label" for="upi">
+                                            UPI Payment
+                                            <span class="payment-icons">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div id="creditCardForm">
+                                    <div class="row mb-3">
+                                        <div class="col-12 mb-3">
+                                            <label for="cardName" class="form-label">Name on Card</label>
+                                            <input type="text" class="form-control" id="cardName" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12 mb-3">
+                                            <label for="cardNumber" class="form-label">Card Number</label>
+                                            <input type="text" class="form-control" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="expiryDate" class="form-label">Expiry Date</label>
+                                            <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="XXX" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="booking-summary mt-4">
+                                    <h4>Booking Summary</h4>
+                                    <div class="summary-details">
+                                        <div class="row summary-item">
+                                            <div class="col-8">Room Type:</div>
+                                            <div class="col-4 text-end" id="summaryRoomType">Deluxe Room</div>
+                                        </div>
+                                        <div class="row summary-item">
+                                            <div class="col-8">Check-in Date:</div>
+                                            <div class="col-4 text-end" id="summaryCheckIn">May 15, 2025</div>
+                                        </div>
+                                        <div class="row summary-item">
+                                            <div class="col-8">Check-out Date:</div>
+                                            <div class="col-4 text-end" id="summaryCheckOut">May 18, 2025</div>
+                                        </div>
+                                        <div class="row summary-item">
+                                            <div class="col-8">Number of Nights:</div>
+                                            <div class="col-4 text-end" id="summaryNights">3</div>
+                                        </div>
+                                        <div class="row summary-item">
+                                            <div class="col-8">Room Rate per Night:</div>
+                                            <div class="col-4 text-end" id="summaryRoomRate">₹12,500</div>
+                                        </div>
+                                        <div class="row summary-item">
+                                            <div class="col-8">Taxes & Fees (18%):</div>
+                                            <div class="col-4 text-end" id="summaryTaxes">₹6,750</div>
+                                        </div>
+                                        <div class="row summary-item total">
+                                            <div class="col-8">Total Amount:</div>
+                                            <div class="col-4 text-end" id="summaryTotal">₹44,250</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                                    </label>
+                                </div>
+
+                                <div class="form-navigation d-flex justify-content-between mt-4">
+                                    <button class="btn back-btn" id="backToStep2">Back to Guest Information</button>
+                                    <button class="btn next-btn" id="toStep4">Complete Booking</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Confirmation -->
+                            <div class="booking-form-step d-none" id="bookingStep4">
+                                <div class="confirmation-message text-center">
+                                    <div class="confirmation-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <h2>Booking Confirmed!</h2>
+                                    <p>Thank you for choosing The Rajputana Palace. Your booking has been confirmed.</p>
+                                    <div class="booking-reference mt-4">
+                                        <h5>Booking Reference: <span id="bookingReference">RPP25042301</span></h5>
+                                        <p>A confirmation email has been sent to <span id="confirmationEmail">your email address</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="booking-details mt-5">
+                                    <h4>Booking Details</h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="detail-item">
+                                                <div class="detail-label">Guest Name:</div>
+                                                <div class="detail-value" id="confirmationName">John Doe</div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <div class="detail-label">Room Type:</div>
+                                                <div class="detail-value" id="confirmationRoomType">Deluxe Room</div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <div class="detail-label">Check-in Date:</div>
+                                                <div class="detail-value" id="confirmationCheckIn">May 15, 2025</div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <div class="detail-label">Check-out Date:</div>
+                                                <div class="detail-value" id="confirmationCheckOut">May 18, 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="detail-item">
+                                                <div class="detail-label">Number of Guests:</div>
+                                                <div class="detail-value" id="confirmationGuests">2 Adults</div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <div class="detail-label">Total Amount Paid:</div>
+                                                <div class="detail-value" id="confirmationTotal">₹44,250</div>
+                                            </div>
+                                            <div class="detail-item">
+                                                <div class="detail-label">Payment Method:</div>
+                                                <div class="detail-value" id="confirmationPayment">Credit Card</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="what-next mt-5">
+                                    <h4>What's Next?</h4>
+                                    <ul class="next-steps">
+                                        <li>
+                                            <i class="fas fa-envelope"></i>
+                                            <div>
+                                                <h5>Check Your Email</h5>
+                                                <p>We've sent a detailed confirmation to your email with all booking information.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-concierge-bell"></i>
+                                            <div>
+                                                <h5>Pre-arrival Services</h5>
+                                                <p>Our concierge team will contact you to arrange any special requests or airport transfers.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-suitcase"></i>
+                                            <div>
+                                                <h5>Prepare for Your Stay</h5>
+                                                <p>Pack your bags and get ready for a luxurious experience at The Rajputana Palace.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="text-center mt-5">
+                                    <a href="index.html" class="btn return-home-btn">Return to Homepage</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Subscription Section -->
+                <div class="col-lg-4 mb-5">
+                    <h2 class="footer-heading">SUBSCRIBE FOR LATEST UPDATES</h2>
+                    <div class="subscription-form">
+                        <input type="email" placeholder="Enter your email Address" class="form-control">
+                        <button class="subscribe-btn">SUBSCRIBE</button>
+                    </div>
+                    <div class="contact-info mt-4">
+                        <div class="contact-heading">FOR BOOKINGS CONTACT</div>
+                        <div class="contact-phone">1-800-111-825</div>
+                        <a href="mailto:reservations@example.com">reservations@example.com</a>
+                        <div class="contact-heading mt-3">CUSTOMER SUPPORT</div>
+                        <a href="mailto:support@example.com">support@example.com</a>
+                        <a href="mailto:feedback@example.com">feedback@example.com</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Sections -->
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-3 col-6 mb-4">
+                            <h3 class="footer-heading">Explore</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Hotels & Resorts</a></li>
+                                <li><a href="#">Dining</a></li>
+                                <li><a href="#">Meetings & Socials</a></li>
+                                <li><a href="#">Weddings</a></li>
+                                <li><a href="#">Wellness</a></li>
+                                <li><a href="#">New & Upcoming Hotels</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <h3 class="footer-heading">About Us</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Our Story</a></li>
+                                <li><a href="#">Awards</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Social Responsibility</a></li>
+                                <li><a href="#">Sustainability</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <h3 class="footer-heading">CONNECT WITH US</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Assistance</a></li>
+                                <li><a href="#">Feedback</a></li>
+                                <li><a href="#">X Concierge</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Hotel Development</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <h3 class="footer-heading">TOP DESTINATIONS</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">New Delhi Hotels</a></li>
+                                <li><a href="#">Mumbai Hotels</a></li>
+                                <li><a href="#">Chennai Hotels</a></li>
+                                <li><a href="#">Bengaluru Hotels</a></li>
+                                <li><a href="#">Goa Hotels & Resorts</a></li>
+                                <li><a href="#">Hyderabad Hotels</a></li>
+                                <li><a href="#">Kolkata Hotels</a></li>
+                                <li><a href="#">Jaipur Hotels</a></li>
+                                <li><a href="#">Agra Hotels</a></li>
+                                <li><a href="#">All Destinations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 The Rajputana Palace All Rights Reserved.
+                </div>
+                <div class="footer-policy-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>$(document).ready(function() {
+        // Initialize datepickers
+        $('.datepicker').datepicker({
+            format: 'mm/dd/yyyy',
+            autoclose: true,
+            startDate: new Date(),
+            todayHighlight: true
+        });
+    
+        // Set default dates (today and tomorrow)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        $('#checkInDate').datepicker('setDate', today);
+        $('#checkOutDate').datepicker('setDate', tomorrow);
+        
+        // Room selection
+        $('.select-room-btn').click(function() {
+            $('.select-room-btn').removeClass('selected');
+            $(this).addClass('selected');
+            
+            // Enable the continue button
+            $('#toStep2').prop('disabled', false);
+            
+            // Update booking summary
+            const roomType = $(this).data('room');
+            const roomPrice = $(this).data('price');
+            
+            $('#summaryRoomType').text(roomType);
+            $('#summaryRoomRate').text('₹' + roomPrice.toLocaleString());
+            
+            // Calculate total based on selected dates
+            updateBookingSummary();
+        });
+        
+        // Update booking summary when dates change
+        $('#checkInDate, #checkOutDate').change(function() {
+            updateBookingSummary();
+        });
+        
+        // Navigation between steps
+        $('#toStep2').click(function() {
+            if ($(this).prop('disabled')) return;
+            
+            $('#bookingStep1').addClass('d-none');
+            $('#bookingStep2').removeClass('d-none');
+            
+            $('.step').removeClass('active');
+            $('#step2').addClass('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        $('#backToStep1').click(function() {
+            $('#bookingStep2').addClass('d-none');
+            $('#bookingStep1').removeClass('d-none');
+            
+            $('.step').removeClass('active');
+            $('#step1').addClass('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        $('#toStep3').click(function() {
+            // Validate form fields
+            const firstName = $('#firstName').val();
+            const lastName = $('#lastName').val();
+            const email = $('#email').val();
+            const phone = $('#phone').val();
+            
+            if (!firstName || !lastName || !email || !phone) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            $('#bookingStep2').addClass('d-none');
+            $('#bookingStep3').removeClass('d-none');
+            
+            $('.step').removeClass('active');
+            $('#step3').addClass('active');
+            
+            // Update confirmation email
+            $('#confirmationEmail').text(email);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        $('#backToStep2').click(function() {
+            $('#bookingStep3').addClass('d-none');
+            $('#bookingStep2').removeClass('d-none');
+            
+            $('.step').removeClass('active');
+            $('#step2').addClass('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        $('#toStep4').click(function() {
+            // Validate payment fields
+            const cardName = $('#cardName').val();
+            const cardNumber = $('#cardNumber').val();
+            const expiryDate = $('#expiryDate').val();
+            const cvv = $('#cvv').val();
+            const termsCheck = $('#termsCheck').prop('checked');
+            
+            if (!cardName || !cardNumber || !expiryDate || !cvv) {
+                alert('Please fill in all payment details.');
+                return;
+            }
+            
+            if (!termsCheck) {
+                alert('Please agree to the Terms and Conditions.');
+                return;
+            }
+            
+            $('#bookingStep3').addClass('d-none');
+            $('#bookingStep4').removeClass('d-none');
+            
+            $('.step').removeClass('active');
+            $('#step4').addClass('active');
+            
+            // Update confirmation details
+            const firstName = $('#firstName').val();
+            const lastName = $('#lastName').val();
+            $('#confirmationName').text(firstName + ' ' + lastName);
+            
+            const adults = $('#adults').val();
+            const children = $('#children').val();
+            let guestsText = adults + ' Adult' + (adults > 1 ? 's' : '');
+            if (children > 0) {
+                guestsText += ', ' + children + ' Child' + (children > 1 ? 'ren' : '');
+            }
+            $('#confirmationGuests').text(guestsText);
+            
+            $('#confirmationRoomType').text($('#summaryRoomType').text());
+            $('#confirmationCheckIn').text(formatDate($('#checkInDate').val()));
+            $('#confirmationCheckOut').text(formatDate($('#checkOutDate').val()));
+            $('#confirmationTotal').text($('#summaryTotal').text());
+            
+            // Set payment method
+            let paymentMethod = 'Credit Card';
+            if ($('#debitCard').prop('checked')) {
+                paymentMethod = 'Debit Card';
+            } else if ($('#upi').prop('checked')) {
+                paymentMethod = 'UPI Payment';
+            }
+            $('#confirmationPayment').text(paymentMethod);
+            
+            // Generate booking reference
+            const bookingRef = 'RPP' + generateBookingReference();
+            $('#bookingReference').text(bookingRef);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        // Function to update booking summary
+        function updateBookingSummary() {
+            const checkIn = new Date($('#checkInDate').val());
+            const checkOut = new Date($('#checkOutDate').val());
+            
+            // Calculate number of nights
+            const timeDiff = Math.abs(checkOut.getTime() - checkIn.getTime());
+            const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            
+            // Get selected room price
+            let roomPrice = 12500; // Default price
+            $('.select-room-btn.selected').each(function() {
+                roomPrice = $(this).data('price');
+            });
+            
+            // Calculate total
+            const roomTotal = roomPrice * nights;
+            const taxes = roomTotal * 0.18; // 18% tax
+            const total = roomTotal + taxes;
+            
+            // Update summary
+            $('#summaryCheckIn').text(formatDate($('#checkInDate').val()));
+            $('#summaryCheckOut').text(formatDate($('#checkOutDate').val()));
+            $('#summaryNights').text(nights);
+            $('#summaryTaxes').text('₹' + taxes.toLocaleString());
+            $('#summaryTotal').text('₹' + total.toLocaleString());
+        }
+        
+        // Format date for display
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+        
+        // Generate booking reference
+        function generateBookingReference() {
+            const date = new Date();
+            const year = date.getFullYear().toString().substr(-2);
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+            
+            return year + month + day + random;
+        }
+        
+        // Initialize the booking summary on page load
+        updateBookingSummary();
+        
+        // Credit card input formatting
+        $('#cardNumber').on('input', function() {
+            let value = $(this).val().replace(/\D/g, '');
+            if (value.length > 16) {
+                value = value.substr(0, 16);
+            }
+            
+            // Add spaces every 4 digits
+            let formattedValue = '';
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formattedValue += ' ';
+                }
+                formattedValue += value[i];
+            }
+            
+            $(this).val(formattedValue);
+        });
+        
+        // Expiry date formatting (MM/YY)
+        $('#expiryDate').on('input', function() {
+            let value = $(this).val().replace(/\D/g, '');
+            if (value.length > 4) {
+                value = value.substr(0, 4);
+            }
+            
+            if (value.length > 2) {
+                value = value.substr(0, 2) + '/' + value.substr(2);
+            }
+            
+            $(this).val(value);
+        });
+        
+        // CVV input (numbers only, max 3-4 digits)
+        $('#cvv').on('input', function() {
+            let value = $(this).val().replace(/\D/g, '');
+            if (value.length > 4) {
+                value = value.substr(0, 4);
+            }
+            $(this).val(value);
+        });
+
+        // Update the displayed location dynamically
+        $('#locationSelect').change(function () {
+            const selectedLocation = $(this).val();
+            $('#selectedLocation').text(selectedLocation);
+        });
+    });
+    $(document).ready(function () {
+        // Room selection
+        $('.select-room-btn').click(function () {
+            // Remove 'selected' class from all buttons and add it to the clicked button
+            $('.select-room-btn').removeClass('selected');
+            $(this).addClass('selected');
+
+            // Enable the continue button
+            $('#toStep2').prop('disabled', false);
+
+            // Update the selected room type and amount dynamically
+            const roomType = $(this).data('room');
+            const roomPrice = $(this).data('price');
+
+            // Update the displayed room type and amount
+            $('#roomTypeDisplay').text(roomType); // Update room type dynamically
+            $('#roomAmount').text(roomPrice.toLocaleString()); // Update room amount dynamically
+
+            // Update booking summary
+            $('#summaryRoomType').text(roomType);
+            $('#summaryRoomRate').text('₹' + roomPrice.toLocaleString());
+
+            // Recalculate the total amount based on selected dates
+            updateBookingSummary();
+        });
+
+        // Function to update booking summary
+        function updateBookingSummary() {
+            const checkIn = new Date($('#checkInDate').val());
+            const checkOut = new Date($('#checkOutDate').val());
+
+            // Calculate the number of nights
+            const timeDiff = Math.abs(checkOut.getTime() - checkIn.getTime());
+            const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            // Get the selected room price
+            let roomPrice = 0;
+            $('.select-room-btn.selected').each(function () {
+                roomPrice = $(this).data('price');
+            });
+
+            // Calculate the total amount
+            const roomTotal = roomPrice * nights;
+            const taxes = roomTotal * 0.18; // 18% tax
+            const total = roomTotal + taxes;
+
+            // Update the summary
+            $('#summaryCheckIn').text(formatDate($('#checkInDate').val()));
+            $('#summaryCheckOut').text(formatDate($('#checkOutDate').val()));
+            $('#summaryNights').text(nights);
+            $('#summaryTaxes').text('₹' + taxes.toLocaleString());
+            $('#summaryTotal').text('₹' + total.toLocaleString());
+        }
+
+        // Helper function to format dates
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+    });
+</script>
+</body>
+</html>

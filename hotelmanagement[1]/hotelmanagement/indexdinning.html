@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rajputana Palace - Dinning</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Navigation Styles */
+/* .navbar {
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-dark {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-light {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .nav-link,
+.navbar-light .login-link {
+    color: #333 !important;
+}
+
+.logo {
+    height: 50px;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-link:hover {
+    color: #d4af37;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f8f8;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.login-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 20px;
+    letter-spacing: 1px;
+}
+
+.login-link:hover {
+    color: #d4af37;
+}*/
+
+/* .book-stay-btn {
+    background-color: #b08c3c;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.book-stay-btn:hover {
+    background-color: #9a7a33;
+    color: #fff;
+} */
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: relative;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Fine Dining Section */
+.fine-dining-section {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    position: relative;
+    font-size: 32px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    display: inline-block;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #ccc;
+    width: 100px;
+    top: 50%;
+}
+
+.section-title::before {
+    right: 100%;
+    margin-right: 20px;
+}
+
+.section-title::after {
+    left: 100%;
+    margin-left: 20px;
+}
+
+.dining-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.dining-carousel {
+    position: relative;
+    margin-top: 50px;
+}
+
+.carousel-item-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.carousel-item-wrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.carousel-prev,
+.carousel-next {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-prev {
+    margin-left: -20px;
+}
+
+.carousel-next {
+    margin-right: -20px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: #fff;
+}
+
+/* Three Pillars Section */
+.three-pillars-section {
+    padding: 0px 0;
+    background-color: #f9f9f9;
+}
+
+.pillar-item {
+    text-align: center;
+    padding: 0 0px;
+    margin-bottom: 30px;
+}
+
+.pillar-title {
+    position: relative;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.pillar-title::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background-color: #ccc;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pillar-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.read-more {
+    color: #b08c3c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Restaurant Brands Section */
+.restaurant-brands-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.brands-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-top: 20px;
+}
+
+.brands-title::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background-color: #ccc;
+    top: 0;
+    left: 0;
+}
+
+.brands-description {
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.brands-carousel {
+    position: relative;
+    margin-top: 50px;
+}
+
+.brand-card {
+    background-color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.brand-image {
+    overflow: hidden;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.brand-card:hover .brand-image img {
+    transform: scale(1.05);
+}
+
+.brand-content {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.brand-name {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.brand-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.more-link {
+    color: #b08c3c;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.more-link i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.brands-nav {
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    transform: translateY(-50%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+    }
+    
+    .navbar-light .navbar-collapse {
+        background-color: #fff;
+    }
+    
+    .nav-right {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .login-link {
+        margin-bottom: 15px;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .section-title::before,
+    .section-title::after {
+        width: 50px;
+    }
+    
+    .brand-image img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .section-title {
+        font-size: 26px;
+    }
+    
+    .section-title::before,
+    .section-title::after {
+        display: none;
+    }
+    
+    .brands-title {
+        font-size: 28px;
+    }
+    
+    .carousel-item-wrapper img {
+        height: 250px;
+    }
+    
+    .brand-image img {
+        height: 250px;
+    }
+    
+    .carousel-nav {
+        display: none;
+    }
+}
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    padding: 10px 40px;
+  }
+  
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links-left,
+  .nav-links-right {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links-left li,
+  .nav-links-right li {
+    margin: 0 20px;
+  }
+  
+  .nav-link {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .logo-sub {
+    font-family: "Playfair Display", serif;
+    font-size: 10px;
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+  }
+  
+  .book-now {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  
+  .book-now:hover {
+    background-color: #b45309;
+    transform: translateY(-2px);
+  }
+  /* Footer */
+  footer {
+    background-color: #f9f9f9;
+    color: var(--text-color);
+    padding: 60px 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .subscription-section {
+    width: 30%;
+    padding: 0 20px 20px 0;
+  }
+  
+  .subscription-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .subscription-form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-form input[type="email"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-right: none;
+    background-color: #fff;
+    color: var(--text-color);
+  }
+  
+  .subscription-form button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscription-form button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .contact-info {
+    margin-top: 30px;
+  }
+  
+  .contact-heading {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .contact-phone {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a:hover {
+    color: var(--primary-color);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #eee;
+    color: var(--text-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .links-section {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    width: 22%;
+    padding: 0 10px;
+  }
+  
+  .footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .copyright {
+    font-size: 14px;
+    color: var(--light-text);
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: var(--light-text);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .welcome-rajasthan-section,
+    .room-section,
+    .booking-section {
+      max-width: 95%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .navbar {
+      padding: 15px 20px;
+    }
+  
+    .nav-links-left li,
+    .nav-links-right li {
+      margin: 0 10px;
+    }
+  
+    .welcome-rajasthan-section {
+      flex-direction: column;
+    }
+  
+    .welcome-rajasthan-carousel-container,
+    .welcome-rajasthan-text {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+  
+    .welcome-rajasthan-carousel-container {
+      height: 400px;
+      border-radius: 8px 8px 0 0;
+    }
+  
+    .welcome-rajasthan-text {
+      border-radius: 0 0 8px 8px;
+    }
+  
+    .subscription-section {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  
+    .links-section {
+      width: 100%;
+    }
+  
+    .footer-column {
+      width: 48%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links-left,
+    .nav-links-right {
+      display: none;
+    }
+  
+    .mobile-menu-toggle {
+      display: block;
+    }
+  
+    .booking-section {
+      position: relative;
+      bottom: 0;
+      transform: none;
+      left: 0;
+      width: 100%;
+      border-radius: 0;
+      padding: 20px;
+    }
+  
+    .booking-form {
+      flex-direction: column;
+    }
+  
+    .booking-item {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  
+    .availability-btn {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .carousel-caption {
+      bottom: 10%;
+      left: 5%;
+      max-width: 90%;
+    }
+  
+    .carousel-caption h2 {
+      font-size: 2rem;
+    }
+  
+    .carousel-caption p {
+      font-size: 1rem;
+    }
+  
+    .room-carousel-control {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .footer-column {
+      width: 100%;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .copyright {
+      margin-bottom: 15px;
+    }
+  
+    .footer-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-inner {
+      height: 70vh;
+    }
+  
+    .welcome-rajasthan-title {
+      font-size: 2rem;
+    }
+  
+    .room-header h2,
+    .restaurant-heading,
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .room-description h3,
+    .restaurant-name {
+      font-size: 1.8rem;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar-->
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="mobile-menu-toggle d-md-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links-left">
+                <li><a href="indexroomandsuites.html" class="nav-link">Rooms & Suites</a></li>
+                <li><a href="indexdinning.html" class="nav-link">Dining</a></li>
+                <li><a href="indexexperience.html" class="nav-link">Experiences</a></li>
+                <li><a href="indexoffers.html" class="nav-link">Offers</a></li>
+            </ul>
+        </div>
+
+        <div class="logo" > <a href="index.html" class="logo-link">
+            <img src="logo-Photoroom.png" alt="The Rajputana Palace Logo"> </a>
+            <div class="logo-sub">The Rajputana Palace</div>
+        </div>
+        <div class="nav-right">
+            <ul class="nav-links-right">
+                <li><a href="indexwellness.html" class="nav-link">Wellness</a></li>
+                <li><a href="indexmeetings.html" class="nav-link">Meetings & Events</a></li>
+                <li class="nav-item dropdown">
+                    Destination
+                     <ul class="dropdown-menu" aria-labelledby="destinationDropdown">
+                       <li><a class="dropdown-item" href="udaipur.html">Udaipur</a></li>
+                       <li><a class="dropdown-item" href="bengaluru.html">Bengaluru</a></li>
+                       <li><a class="dropdown-item" href="newdelhi.html">New Delhi</a></li>
+                   </ul>
+               </li>
+            </ul>
+            <a href="roombooking.html"><button class="book-now">Book Now</button></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-image">
+            <img src="./images/dinning_main_img.webp" alt="The rajputana palace Culinary Experience" class="img-fluid w-100">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">A CULINARY LEGACY</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fine Dining Section -->
+    <section class="fine-dining-section">
+        <div class="container">
+            <h2 class="section-title">FINE DINING AT Rajputana palace RESTAURANTS</h2>
+            
+            <div class="dining-description">
+                <p>Embark on a journey of exquisite experiences for the discerning connoisseur, seamlessly woven together with impeccable service, sophisticated ambience and masterful culinary artistry.</p>
+            </div>
+            
+            <div class="dining-carousel">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="carousel-item-wrapper">
+                            <img src="./images/chef.avif" alt="Celebrated Chef" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="carousel-item-wrapper">
+                            <img src="./images/udaimahal.avif" alt="Rajputana palace Restaurant" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="carousel-item-wrapper">
+                            <img src="./images/recipe.webp" alt="Signature Dish" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="carousel-nav">
+                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Pillars Section -->
+    <section class="three-pillars-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pillar-item">
+                        <h3 class="pillar-title">CELEBRATED CHEFS</h3>
+                        <p class="pillar-description">
+                            A distinguished roster of world-class talent that embodies culinary excellence.
+                            <!-- <a href="#" class="read-more">»</a> -->
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pillar-item">
+                        <h3 class="pillar-title">LEGENDARY RESTAURANTS</h3>
+                        <p class="pillar-description">
+                            A collection of restaurants recognised for unparalleled dining experiences.
+                            <!-- <a href="#" class="read-more">»</a> -->
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pillar-item">
+                        <h3 class="pillar-title">SIGNATURE RECIPES</h3>
+                        <p class="pillar-description">
+                            Each a testament to our culinary passion and honed over years of dedication.
+                            <!-- <a href="#" class="read-more">»</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Brands Section -->
+    <section class="restaurant-brands-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="brands-title">OUR LEGENDARY<br>RESTAURANT BRANDS</h2>
+                </div>
+                <div class="col-lg-6">
+                    <p class="brands-description">
+                        Step into the realm of our culinary legends where a symphony of flavours enchants your taste buds, ambience embraces you in a tapestry of elegance and the genuine warmth of our service leaves you feeling truly indulged.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="brands-carousel">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="brand-card">
+                            <div class="brand-image">
+                                <img src="./images/suryamahal_chandini.jpg" alt="Machan Restaurant" class="img-fluid">
+                            </div>
+                            <div class="brand-content">
+                                <h3 class="brand-name">MACHAN</h3>
+                                <p class="brand-description">
+                                    Presenting a delightful blend of earthy simplicity and urban sophistication, Machan invites its guests to enjoy a diverse bill of fare that celebrates the best of Indian and international cuisine.
+                                    <!-- <a href="#" class="read-more">»</a> -->
+                                </p>
+                                <!-- <a href="#" class="more-link">MORE <i class="fas fa-chevron-right"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="brand-card">
+                            <div class="brand-image">
+                                <img src="./images/udaimahal.avif" alt="Loya Restaurant" class="img-fluid">
+                            </div>
+                            <div class="brand-content">
+                                <h3 class="brand-name">LOYA</h3>
+                                <p class="brand-description">
+                                    LOYA takes its diners on a gastronomic journey through North India's diverse landscape, blending flavours from the Himalayan foothills to the deserts of Rajasthan. The restaurant's name, which means 'to unite' in Hindi, reflects its mission to bring together the best of Indian cuisine.
+                                    <!-- <a href="#" class="read-more">»</a> -->
+                                </p>
+                                <!-- <a href="#" class="more-link">MORE <i class="fas fa-chevron-right"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav brands-nav">
+                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="subscription-section">
+            <h2>SUBSCRIBE FOR LATEST UPDATES</h2>
+            <div class="subscription-form">
+                <input type="email" placeholder="Enter your email Address">
+                <button>SUBSCRIBE</button>
+            </div>
+            <div class="contact-info">
+                <div class="contact-heading">FOR BOOKINGS CONTACT</div>
+                <div class="contact-phone">1-800-111-825</div>
+                <div><a href="mailto:reservations@example.com">reservations@example.com</a></div>
+                <div class="contact-heading">CUSTOMER SUPPORT</div>
+                <div><a href="mailto:support@example.com">support@example.com</a></div>
+                <div><a href="mailto:feedback@example.com">feedback@example.com</a></div>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="links-section">
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Hotels & Resorts</a></li>
+                    <li><a href="#">Dining</a></li>
+                    <li><a href="#">Meetings & Socials</a></li>
+                    <li><a href="#">Weddings</a></li>
+                    <li><a href="#">Wellness</a></li>
+                    <li><a href="#">New & Upcoming Hotels</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Social Responsibility</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONNECT WITH US</h3>
+                <ul>
+                    <li><a href="#">Assistance</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">X Concierge</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Hotel Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>TOP DESTINATIONS</h3>
+                <ul>
+                    <li><a href="#">New Delhi Hotels</a></li>
+                    <li><a href="#">Mumbai Hotels</a></li>
+                    <li><a href="#">Chennai Hotels</a></li>
+                    <li><a href="#">Bengaluru Hotels</a></li>
+                    <li><a href="#">Goa Hotels & Resorts</a></li>
+                    <li><a href="#">Hyderabad Hotels</a></li>
+                    <li><a href="#">Kolkata Hotels</a></li>
+                    <li><a href="#">Jaipur Hotels</a></li>
+                    <li><a href="#">Agra Hotels</a></li>
+                    <li><a href="#">All Destinations</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 The Rajputana Palace All Rights Reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Chat Button
+    <div class="chat-button">
+        <button class="btn-chat">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div> -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    // Navbar background change on scroll
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.remove('navbar-dark');
+            navbar.classList.add('navbar-light');
+        } else {
+            navbar.classList.remove('navbar-light');
+            navbar.classList.add('navbar-dark');
+        }
+    });
+    
+    // Dining Carousel Functionality
+    const diningCarouselPrev = document.querySelector('.dining-carousel .carousel-prev');
+    const diningCarouselNext = document.querySelector('.dining-carousel .carousel-next');
+    const diningItems = document.querySelectorAll('.dining-carousel .carousel-item-wrapper');
+    
+    // Dining carousel data with images and descriptions
+    const diningData = [
+        {
+            image: "/images/chef.avif",
+            alt: "Celebrated Chef",
+            description: "Our celebrated chefs bring world-class culinary expertise to every dish, creating unforgettable dining experiences."
+        },
+        {
+            image: "/images/udaimahal.avif",
+            alt: "Taj Restaurant",
+            description: "Experience the elegance and sophistication of our legendary restaurants, where tradition meets innovation."
+        },
+        {
+            image: "/images/recipe.webp",
+            alt: "Signature Dish",
+            description: "Indulge in our signature recipes, each crafted with passion and perfected over generations."
+        }
+    ];
+    
+    let diningCurrentIndex = 0;
+    
+    function updateDiningDescription(index) {
+        // Update the dining description text
+        const diningDescriptionElement = document.querySelector('.dining-description p');
+        if (diningDescriptionElement) {
+            diningDescriptionElement.textContent = diningData[index].description;
+        }
+    }
+    
+    function showDiningSlide(index) {
+        // Hide all items
+        diningItems.forEach(item => {
+            item.style.display = 'none';
+        });
+        
+        // Calculate which items to show (3 items at a time)
+        for (let i = 0; i < 3; i++) {
+            const slideIndex = (index + i) % diningData.length;
+            if (diningItems[i]) {
+                diningItems[i].style.display = 'block';
+                const img = diningItems[i].querySelector('img');
+                if (img) {
+                    img.src = diningData[slideIndex].image;
+                    img.alt = diningData[slideIndex].alt;
+                }
+            }
+        }
+        
+        // Update description based on the first visible slide
+        updateDiningDescription(index);
+    }
+    
+    if (diningCarouselPrev && diningCarouselNext) {
+        diningCarouselPrev.addEventListener('click', function() {
+            diningCurrentIndex = (diningCurrentIndex - 1 + diningData.length) % diningData.length;
+            showDiningSlide(diningCurrentIndex);
+        });
+        
+        diningCarouselNext.addEventListener('click', function() {
+            diningCurrentIndex = (diningCurrentIndex + 1) % diningData.length;
+            showDiningSlide(diningCurrentIndex);
+        });
+        
+        // Initialize the dining carousel
+        showDiningSlide(diningCurrentIndex);
+    }
+    
+    // Brands Carousel Functionality
+    const brandsCarouselPrev = document.querySelector('.brands-carousel .carousel-prev');
+    const brandsCarouselNext = document.querySelector('.brands-carousel .carousel-next');
+    const brandCards = document.querySelectorAll('.brand-card');
+    
+    // Brands carousel data
+    const brandsData = [
+        {
+            image: "./images/suryamahal_chandini.jpg",
+            name: "MACHAN",
+            description: "Presenting a delightful blend of earthy simplicity and urban sophistication, Machan invites its guests to enjoy a diverse bill of fare that celebrates the best of Indian and international cuisine."
+        },
+        {
+            image: "./images/udaimahal.avif",
+            name: "LOYA",
+            description: "LOYA takes its diners on a gastronomic journey through North India's diverse landscape, blending flavours from the Himalayan foothills to the deserts of Rajasthan."
+        },
+        {
+            image: "./images/recipe.webp",
+            name: "SHAMIANA",
+            description: "The all-day diner that has been an integral part of the rajputana Palace since 1973, offering a blend of international and local cuisines."
+        },
+        // {
+        //     image: "WhatsApp Image 2025-04-12 at 2.36.24 PM.jpeg",
+        //     name: "GOLDEN DRAGON",
+        //     description: "An authentic Chinese restaurant known for its Sichuan and Cantonese specialties, served in an elegant oriental setting."
+        // }
+    ];
+    
+    let brandsCurrentIndex = 0;
+    
+    function showBrandsSlide(index) {
+        // Update brand cards with data
+        brandCards.forEach((card, i) => {
+            const dataIndex = (index + i) % brandsData.length;
+            const image = card.querySelector('.brand-image img');
+            const name = card.querySelector('.brand-name');
+            const description = card.querySelector('.brand-description');
+            
+            if (image && name && description) {
+                image.src = brandsData[dataIndex].image;
+                image.alt = brandsData[dataIndex].name;
+                name.textContent = brandsData[dataIndex].name;
+                
+                // Update description and keep the read more link
+                const readMoreLink = description.querySelector('.read-more');
+                description.innerHTML = brandsData[dataIndex].description;
+                if (readMoreLink) {
+                    description.innerHTML += ' ';
+                    description.appendChild(readMoreLink);
+                }
+            }
+        });
+    }
+    
+    if (brandsCarouselPrev && brandsCarouselNext) {
+        brandsCarouselPrev.addEventListener('click', function() {
+            brandsCurrentIndex = (brandsCurrentIndex - 1 + brandsData.length) % brandsData.length;
+            showBrandsSlide(brandsCurrentIndex);
+        });
+        
+        brandsCarouselNext.addEventListener('click', function() {
+            brandsCurrentIndex = (brandsCurrentIndex + 1) % brandsData.length;
+            showBrandsSlide(brandsCurrentIndex);
+        });
+        
+        // Initialize the brands carousel
+        showBrandsSlide(brandsCurrentIndex);
+    }
+    
+    // Read More Links Functionality
+    const readMoreLinks = document.querySelectorAll('.read-more');
+    
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentText = this.parentElement.textContent.trim();
+            console.log(`Read more clicked for: ${parentText.substring(0, 30)}...`);
+            // This would expand text or navigate to a detailed page in a real implementation
+        });
+    });
+    
+    // More Links Functionality
+    const moreLinks = document.querySelectorAll('.more-link');
+    
+    moreLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const brandName = this.closest('.brand-card').querySelector('.brand-name').textContent;
+            console.log(`More clicked for: ${brandName}`);
+            // This would navigate to a detailed page in a real implementation
+        });
+    });
+});
+    </script>
+</body>
+</html>

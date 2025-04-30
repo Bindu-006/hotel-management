@@ -1,0 +1,1225 @@
+/* Base Styles */
+:root {
+    --primary-color: #c9a76c;
+    --secondary-color: #e67e22;
+    --text-color: #333;
+    --light-text: #555;
+    --background-color: #fff;
+    --border-color: #ddd;
+    --hover-color: #b45309;
+    --link-color: #3b82f6;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    padding: 10px 40px;
+  }
+  
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links-left,
+  .nav-links-right {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links-left li,
+  .nav-links-right li {
+    margin: 0 20px;
+  }
+  
+  .nav-link {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .logo-sub {
+    font-family: "Playfair Display", serif;
+    font-size: 10px;
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+  }
+  
+  .book-now {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  
+  .book-now:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--background-color);
+    z-index: 1001;
+    padding: 20px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+  
+  .mobile-menu.active {
+    left: 0;
+  }
+  
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .logo-mobile {
+    text-align: center;
+  }
+  
+  .mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  
+  .mobile-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-menu-links li {
+    margin-bottom: 15px;
+  }
+  
+  .mobile-menu-links a {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .book-now-mobile {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  /* Main Carousel */
+  .carousel-container {
+    position: relative;
+  }
+  
+  .carousel-inner {
+    height: 100vh;
+    max-height: 800px;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-caption {
+    bottom: 20%;
+    text-align: left;
+    max-width: 600px;
+    left: 10%;
+    right: auto;
+  }
+  
+  .carousel-caption h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.2s ease;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Booking Section */
+  .booking-section {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  .booking-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .booking-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .booking-item label {
+    font-size: 12px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+  }
+  
+  .booking-item select,
+  .booking-item input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .availability-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    white-space: nowrap;
+  }
+  
+  .availability-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Welcome Rajasthan Section */
+  .welcome-rajasthan-section {
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  /* .carousel-inner
+  {
+    margin-top: 70px;
+  } */
+  .welcome-rajasthan-carousel-container {
+    height: 600px;
+    flex: 0 0 50%;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+  }
+  .welcome-rajasthan-text {
+    flex: 0 0 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .welcome-rajasthan-title {
+    font-size: 2.5em;
+    color: #a0522d;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-rajasthan-paragraph {
+    font-size: 1em;
+    color: var(--light-text);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .explore-more-btn {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 10px 0;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .explore-more-btn::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .explore-more-btn:hover::after {
+    width: 100%;
+  }
+  
+  .explore-more-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .explore-more-btn:hover i {
+    transform: translateX(5px);
+  }
+  
+  /* Room Section */
+   /* Room Section */
+   .room-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+  }
+  
+  .room-header {
+    text-align: center;
+    margin-bottom: 30px; /* Reduced margin */
+  }
+  
+  .room-header h2 {
+    font-size: 2.2em; /* Slightly smaller */
+    margin-bottom: 10px; /* Reduced margin */
+  }
+  
+  .room-header p {
+    font-size: 1.1em;
+    color: var(--light-text);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .room-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; /* Reduced margin */
+  }
+  
+  .room-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 450px; /* Reduced height */
+  }
+  
+  .room-slide {
+    flex: 0 0 100%;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    transform: scale(0.9);
+    height: 100%; /* Fill height */
+  }
+  
+  .room-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Fill height */
+  }
+  
+  .room-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    aspect-ratio: 16 / 9; /* Consistent aspect ratio */
+  }
+  
+  .room-quick-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+  }
+  
+  .room-quick-info span {
+    display: flex;
+    align-items: center;
+  }
+  
+  .room-quick-info i {
+    margin-right: 5px;
+  }
+  
+  .room-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .room-carousel-control:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .room-carousel-control.prev {
+    left: 20px;
+  }
+  
+  .room-carousel-control.next {
+    right: 20px;
+  }
+  
+  .room-carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .room-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .room-dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+  }
+  
+  .room-description {
+    text-align: center;
+    padding: 15px; /* Reduced padding */
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9; /* Added background */
+    border-radius: 8px; /* Added rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
+  }
+  
+  .room-description h3 {
+    font-size: 1.8em; /* Smaller font */
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  
+  .room-description p {
+    font-size: 1em; /* Smaller font */
+    color: var(--light-text);
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  .room-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Reduced gap */
+    margin-bottom: 15px; /* Reduced margin */
+  }
+  
+  .room-features span {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--light-text);
+  }
+  
+  .room-features i {
+    margin-right: 8px;
+    color: var(--primary-color);
+  }
+  
+  .room-carousel-container {
+    margin-bottom: 30px;
+  }
+  
+  .room-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .view-room-btn,
+  .book-room-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .view-room-btn {
+    color: var(--link-color);
+    border: 1px solid var(--link-color);
+  }
+  
+  .book-room-btn {
+    color: white;
+    background-color: var(--secondary-color);
+  }
+  
+  .view-room-btn:hover,
+  .book-room-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .view-room-btn:hover {
+    background-color: var(--link-color);
+    color: white;
+  }
+  
+  .book-room-btn:hover {
+    background-color: var(--hover-color);
+  }
+  
+  /* Restaurant Section */
+  .restaurant-section {
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .restaurant-heading {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .restaurant-description {
+    color: var(--light-text);
+    max-width: 90%;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+  
+  .view-all-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .view-all-link:hover {
+    color: var(--hover-color);
+  }
+  
+  .restaurant-image-container {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .restaurant-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .restaurant-image-container:hover .restaurant-image {
+    transform: scale(1.05);
+  }
+  
+  .restaurant-name {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .restaurant-name span {
+    font-weight: 600;
+  }
+  
+  .restaurant-details {
+    margin: 20px 0;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: var(--light-text);
+  }
+  
+  .detail-item i {
+    margin-right: 10px;
+    color: var(--primary-color);
+  }
+  
+  .explore-link,
+  .menu-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    margin-right: 2rem;
+    transition: color 0.3s;
+  }
+  
+  .explore-link {
+    color: var(--link-color);
+  }
+  
+  /* .menu-link {
+    color: var(--secondary-color);
+  } */
+  
+  .explore-link:hover{
+    opacity: 0.8;
+  }
+  
+  .explore-link i{
+    transition: transform 0.3s ease;
+  }
+  
+  .explore-link:hover i {
+    transform: translateX(5px);
+  }
+  
+  .phone-number {
+    display: flex;
+    align-items: center;
+    color: var(--light-text);
+    margin-top: 2rem;
+    font-weight: 500;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-control:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .carousel-control-prev {
+    left: 10px;
+  }
+  
+  .carousel-control-next {
+    right: 10px;
+  }
+  
+  .carousel-items {
+    position: relative;
+  }
+  
+  .carousel-items .carousel-item {
+    display: none;
+  }
+  
+  .carousel-items .carousel-item.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Events Section */
+  .events-section {
+    padding: 80px 0;
+    background-color: #fff;
+  }
+  
+  .section-title {
+    font-family: "Playfair Display", serif;
+    color: var(--text-color);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+  }
+  
+  .section-description {
+    color: var(--light-text);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .event-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .event-card .card-img-top {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .event-card:hover .card-img-top {
+    transform: scale(1.1);
+  }
+  
+  .event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .event-card:hover .event-overlay {
+    opacity: 1;
+  }
+  
+  .event-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .event-btn:hover {
+    background-color: white;
+    color: var(--primary-color);
+  }
+  
+  .event-card .card-body {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .event-card .card-title {
+    font-family: "Playfair Display", serif;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f9f9f9;
+    color: var(--text-color);
+    padding: 60px 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .subscription-section {
+    width: 30%;
+    padding: 0 20px 20px 0;
+  }
+  
+  .subscription-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .subscription-form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-form input[type="email"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-right: none;
+    background-color: #fff;
+    color: var(--text-color);
+  }
+  
+  .subscription-form button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscription-form button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .contact-info {
+    margin-top: 30px;
+  }
+  
+  .contact-heading {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .contact-phone {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a:hover {
+    color: var(--primary-color);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #eee;
+    color: var(--text-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .links-section {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    width: 22%;
+    padding: 0 10px;
+  }
+  
+  .footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .copyright {
+    font-size: 14px;
+    color: var(--light-text);
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: var(--light-text);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .welcome-rajasthan-section,
+    .room-section,
+    .booking-section {
+      max-width: 95%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .navbar {
+      padding: 15px 20px;
+    }
+  
+    .nav-links-left li,
+    .nav-links-right li {
+      margin: 0 10px;
+    }
+  
+    .welcome-rajasthan-section {
+      flex-direction: column;
+    }
+  
+    .welcome-rajasthan-carousel-container,
+    .welcome-rajasthan-text {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+  
+    .welcome-rajasthan-carousel-container {
+      height: 400px;
+      border-radius: 8px 8px 0 0;
+    }
+  
+    .welcome-rajasthan-text {
+      border-radius: 0 0 8px 8px;
+    }
+  
+    .subscription-section {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  
+    .links-section {
+      width: 100%;
+    }
+  
+    .footer-column {
+      width: 48%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links-left,
+    .nav-links-right {
+      display: none;
+    }
+  
+    .mobile-menu-toggle {
+      display: block;
+    }
+  
+    .booking-section {
+      position: relative;
+      bottom: 0;
+      transform: none;
+      left: 0;
+      width: 100%;
+      border-radius: 0;
+      padding: 20px;
+    }
+  
+    .booking-form {
+      flex-direction: column;
+    }
+  
+    .booking-item {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  
+    .availability-btn {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .carousel-caption {
+      bottom: 10%;
+      left: 5%;
+      max-width: 90%;
+    }
+  
+    .carousel-caption h2 {
+      font-size: 2rem;
+    }
+  
+    .carousel-caption p {
+      font-size: 1rem;
+    }
+  
+    .room-carousel-control {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .footer-column {
+      width: 100%;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .copyright {
+      margin-bottom: 15px;
+    }
+  
+    .footer-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-inner {
+      height: 70vh;
+    }
+  
+    .welcome-rajasthan-title {
+      font-size: 2rem;
+    }
+  
+    .room-header h2,
+    .restaurant-heading,
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .room-description h3,
+    .restaurant-name {
+      font-size: 1.8rem;
+    }
+  }
+  

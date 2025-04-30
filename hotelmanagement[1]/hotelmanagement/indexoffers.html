@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers - The Rajputana Palace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap">
+    <style>
+      /* Global Styles */
+:root {
+  --primary-color: #8b4513;
+  --secondary-color: #d2b48c;
+  --accent-color: #cd853f;
+  --text-color: #333;
+  --light-text: #fff;
+  --dark-bg: #1a1a1a;
+  --light-bg: #f8f5f0;
+  --border-color: #e0d5c1;
+  --gold: #d4af37;
+  --footer-bg: #f9f9f9;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 76px; /* Adjust for fixed navbar */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* Navbar Styles */
+/* .navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--primary-color);
+}
+
+.book-now-btn {
+  background-color: #e67e22;
+  color: white;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #d35400;
+  color: white;
+  transform: translateY(-2px);
+} */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    padding: 10px 40px;
+  }
+  
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links-left,
+  .nav-links-right {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links-left li,
+  .nav-links-right li {
+    margin: 0 20px;
+  }
+  
+  .nav-link {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo img {
+    height: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .logo-sub {
+    font-family: "Playfair Display", serif;
+    font-size: 10px;
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .book-now {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  
+  .book-now:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+  }
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 40px; /* Reduced space between hero and content */
+}
+
+.offers-hero {
+  background: url("https://www.india-travel-packages.in/images/palace-hotels.jpg")
+    no-repeat center center;
+  background-size: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Offers Section */
+.offers-section {
+  padding: 40px 0 80px; /* Reduced top padding */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.title-separator {
+  width: 80px;
+  height: 3px;
+  background-color: var(--gold);
+  margin: 0 auto 30px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: #666;
+}
+
+.category-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.category-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold);
+}
+
+/* Featured Offer */
+.featured-offer {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.featured-offer-image {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+}
+
+.featured-offer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer-badge {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: var(--gold);
+  color: white;
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.featured-offer-content {
+  padding: 40px;
+}
+
+.featured-offer-content h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.offer-validity {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.offer-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.offer-inclusions {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.offer-inclusions li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.offer-inclusions i {
+  color: var(--accent-color);
+  margin-right: 10px;
+}
+
+.offer-price {
+  margin-bottom: 25px;
+}
+
+.price-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.price-amount {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.price-period {
+  font-size: 0.9rem;
+  color: #888;
+  margin-left: 5px;
+}
+
+.book-offer-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.book-offer-btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Regular Offers */
+.offer-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.offer-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.offer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.offer-card:hover .offer-image img {
+  transform: scale(1.1);
+}
+
+.offer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.offer-card:hover .offer-overlay {
+  opacity: 1;
+}
+
+.offer-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--gold);
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.offer-content {
+  padding: 25px;
+}
+
+.offer-content h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* Limited Time Offers */
+.limited-offers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 15px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  min-width: 70px;
+}
+
+.countdown-item span:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.limited-offer-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.limited-offer-image {
+  position: relative;
+  height: 100%;
+  min-height: 200px;
+}
+
+.limited-offer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.limited-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.limited-offer-content {
+  padding: 25px;
+}
+
+.limited-offer-content h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 80px 0;
+  background-color: #f0e6d6;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.testimonial-content i {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.testimonial-author h5 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.testimonial-author p {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 60px 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+  }
+  
+  .subscription-section {
+    width: 30%;
+    padding: 0 20px 20px 0;
+  }
+  
+  .subscription-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .subscription-form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-form input[type="email"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-right: none;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .subscription-form button {
+    padding: 12px 20px;
+    background-color: #c9a76c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscription-form button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .contact-info {
+    margin-top: 30px;
+  }
+  
+  .contact-heading {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .contact-phone {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info a:hover {
+    color: #c9a76c;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .links-section {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    width: 22%;
+    padding: 0 10px;
+  }
+  
+  .footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .copyright {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--primary-color);
+  }
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .limited-offers-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+  }
+
+  .featured-offer-image {
+    min-height: 300px;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 50vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .featured-offer-content {
+    padding: 20px;
+  }
+
+  .countdown-timer {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-left">
+          <button class="mobile-menu-toggle d-md-none">
+              <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-links-left">
+              <li><a href="indexroomandsuites.html" class="nav-link">Rooms & Suites</a></li>
+              <li><a href="indexdinning.html" class="nav-link">Dining</a></li>
+              <li><a href="indexexperience.html" class="nav-link">Experiences</a></li>
+              <li><a href="indexoffers.html" class="nav-link">Offers</a></li>
+          </ul>
+      </div>
+
+      <div class="logo" > <a href="index.html" class="logo-link">
+        <img src="logo-Photoroom.png" alt="The Rajputana Palace Logo"> </a>
+        <div class="logo-sub">The Rajputana Palace</div>
+    </div>
+
+      <div class="nav-right">
+          <ul class="nav-links-right">
+              <li><a href="indexwellness.html" class="nav-link">Wellness</a></li>
+              <li><a href="indexmeetings.html" class="nav-link">Meetings & Events</a></li>
+              <li class="nav-item dropdown">
+                Destination
+               
+               <ul class="dropdown-menu" aria-labelledby="destinationDropdown">
+                   <li><a class="dropdown-item" href="udaipur.html">Udaipur</a></li>
+                   <li><a class="dropdown-item" href="bengaluru.html">Bengaluru</a></li>
+                   <li><a class="dropdown-item" href="newdelhi.html">New Delhi</a></li>
+               </ul>
+           </li>
+          </ul>
+          <a href="offer.html"><button class="book-now">Book Now</button></a>
+      </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section offers-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Special Offers</h1>
+            <p>Exclusive packages and deals for your perfect stay at The Rajputana Palace</p>
+        </div>
+    </section>
+
+    <!-- Main Offers Section -->
+    <section class="offers-section container">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Current Offers</h2>
+                <div class="title-separator"></div>
+                <p class="section-description">Discover our latest packages and special deals designed to enhance your stay with us.</p>
+            </div>
+        </div>
+
+        <!-- Featured Offer -->
+        <div class="featured-offer mb-5">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <div class="featured-offer-image">
+                        <img src="images/escapesummer.jpeg" alt="Summer Escape Package">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="featured-offer-content">
+                        <h3>Summer Escape Package</h3>
+                        <p class="offer-validity">Valid until: August 31, 2025</p>
+                        <p class="offer-description">Escape the heat with our refreshing summer package. Enjoy a 3-night stay with complimentary spa treatments, pool access, and a special dining experience.</p>
+                        <ul class="offer-inclusions">
+                            <li><i class="fas fa-check"></i> 3 nights in a Deluxe Room</li>
+                            <li><i class="fas fa-check"></i> Daily breakfast for two</li>
+                            <li><i class="fas fa-check"></i> One complimentary spa treatment</li>
+                            <li><i class="fas fa-check"></i> Pool access and refreshments</li>
+                            <li><i class="fas fa-check"></i> One romantic dinner for two</li>
+                        </ul>
+                        <div class="offer-price">
+                            <span class="price-label">Starting from</span>
+                            <span class="price-amount">₹25,000</span>
+                            <span class="price-period">per night</span>
+                        </div>
+                        <a href="offer.html" class="book-offer-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regular Offers -->
+        <div class="regular-offers">
+            <h3 class="category-title">Seasonal Offers</h3>
+            <div class="row">
+                <!-- Offer 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="offer-card">
+                        <div class="offer-image">
+                            <img src="./images/weekendgateway.jpeg" alt="Weekend Getaway">
+                            <div class="offer-overlay">
+                                <a href="offer.html" class="book-offer-btn">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="offer-content">
+                            <h4>Weekend Getaway</h4>
+                            <p class="offer-validity">Valid until: December 31, 2025</p>
+                            <p class="offer-description">Perfect for a short break. Enjoy a 2-night stay with special weekend activities and dining options.</p>
+                            <div class="offer-price">
+                                <span class="price-amount">₹18,000</span>
+                                <span class="price-period">per night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="offer-card">
+                        <div class="offer-image">
+                            <img src="./images/culture.jpeg" alt="Cultural Heritage Package">
+                            <div class="offer-overlay">
+                                <a href="offer.html" class="book-offer-btn">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="offer-content">
+                            <h4>Cultural Heritage Package</h4>
+                            <p class="offer-validity">Valid until: December 31, 2025</p>
+                            <p class="offer-description">Immerse yourself in Rajasthan's rich culture with guided tours, traditional performances, and authentic dining experiences.</p>
+                            <div class="offer-price">
+                                <span class="price-amount">₹22,000</span>
+                                <span class="price-period">per night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="offer-card">
+                        <div class="offer-image">
+                            <img src="./images/wellness.jpeg" alt="Wellness Retreat">
+                            <div class="offer-overlay">
+                                <a href="offer.html" class="book-offer-btn">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="offer-content">
+                            <h4>Wellness Retreat</h4>
+                            <p class="offer-validity">Valid until: December 31, 2025</p>
+                            <p class="offer-description">Rejuvenate your body and mind with our comprehensive wellness package including yoga, spa treatments, and healthy dining options.</p>
+                            <div class="offer-price">
+                                <span class="price-amount">₹28,000</span>
+                                <span class="price-period">per night</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Limited Time Offers -->
+        <div class="limited-offers mt-5">
+            <div class="limited-offers-header">
+                <h3 class="category-title">Limited Time Offers</h3>
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="limited-offer-card">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <div class="limited-offer-image">
+                                    <img src="./images/summervacation.jpeg" alt="Early Bird Summer">
+                                    <div class="limited-tag">30% OFF</div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="limited-offer-content">
+                                    <h4>Early Bird Summer</h4>
+                                    <p class="offer-validity">Book by: May 31, 2025</p>
+                                    <p class="offer-description">Book your summer vacation early and enjoy 30% off on all room categories.</p>
+                                    <a href="roombooking.html" class="book-offer-btn">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="limited-offer-card">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <div class="limited-offer-image">
+                                    <img src="./images/staylonger.jpeg" alt="Stay Longer, Save More">
+                                    <div class="limited-tag">SAVE 25%</div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="limited-offer-content">
+                                    <h4>Stay Longer, Save More</h4>
+                                    <p class="offer-validity">Book by: June 15, 2025</p>
+                                    <p class="offer-description">Book a stay of 5 nights or more and save 25% on your entire booking.</p>
+                                    <a href="roombooking.html" class="book-offer-btn">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title text-center">Guest Experiences</h2>
+            <div class="title-separator"></div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The Summer Escape Package was absolutely perfect. The spa treatments were exceptional and the dinner was unforgettable."</p>
+                            <div class="testimonial-author">
+                                <h5>Rahul & Priya Sharma</h5>
+                                <p>Delhi, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The Cultural Heritage Package gave us an authentic experience of Rajasthan. The guided tours were informative and entertaining."</p>
+                            <div class="testimonial-author">
+                                <h5>James Wilson</h5>
+                                <p>London, UK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The Family Package was perfect for our vacation. The kids loved the activities and we enjoyed the spacious accommodations."</p>
+                            <div class="testimonial-author">
+                                <h5>The Chen Family</h5>
+                                <p>Singapore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="subscription-section">
+          <h2>SUBSCRIBE FOR LATEST UPDATES</h2>
+          <div class="subscription-form">
+              <input type="email" placeholder="Enter your email Address">
+              <button>SUBSCRIBE</button>
+          </div>
+          <div class="contact-info">
+              <div class="contact-heading">FOR BOOKINGS CONTACT</div>
+              <div class="contact-phone">1-800-111-825</div>
+              <div><a href="mailto:reservations@example.com">reservations@example.com</a></div>
+              <div class="contact-heading">CUSTOMER SUPPORT</div>
+              <div><a href="mailto:support@example.com">support@example.com</a></div>
+              <div><a href="mailto:feedback@example.com">feedback@example.com</a></div>
+          </div>
+          <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+      </div>
+      <div class="links-section">
+          <div class="footer-column">
+              <h3>Explore</h3>
+              <ul>
+                  <li><a href="#">Hotels & Resorts</a></li>
+                  <li><a href="#">Dining</a></li>
+                  <li><a href="#">Meetings & Socials</a></li>
+                  <li><a href="#">Weddings</a></li>
+                  <li><a href="#">Wellness</a></li>
+                  <li><a href="#">New & Upcoming Hotels</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>About Us</h3>
+              <ul>
+                  <li><a href="#">Our Story</a></li>
+                  <li><a href="#">Awards</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Social Responsibility</a></li>
+                  <li><a href="#">Sustainability</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>CONNECT WITH US</h3>
+              <ul>
+                  <li><a href="#">Assistance</a></li>
+                  <li><a href="#">Feedback</a></li>
+                  <li><a href="#">X Concierge</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Hotel Development</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>TOP DESTINATIONS</h3>
+              <ul>
+                  <li><a href="#">New Delhi Hotels</a></li>
+                  <li><a href="#">Mumbai Hotels</a></li>
+                  <li><a href="#">Chennai Hotels</a></li>
+                  <li><a href="#">Bengaluru Hotels</a></li>
+                  <li><a href="#">Goa Hotels & Resorts</a></li>
+                  <li><a href="#">Hyderabad Hotels</a></li>
+                  <li><a href="#">Kolkata Hotels</a></li>
+                  <li><a href="#">Jaipur Hotels</a></li>
+                  <li><a href="#">Agra Hotels</a></li>
+                  <li><a href="#">All Destinations</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <div class="copyright">
+              © 2025 The Rajputana Palace All Rights Reserved.
+          </div>
+          <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Cookie Policy</a>
+              <a href="#">Sitemap</a>
+          </div>
+      </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu toggle for Bootstrap
+  const navbarToggler = document.querySelector(".navbar-toggler")
+  const navbarCollapse = document.querySelector(".navbar-collapse")
+
+  if (navbarToggler && navbarCollapse) {
+    navbarToggler.addEventListener("click", () => {
+      navbarCollapse.classList.toggle("show")
+    })
+  }
+
+  // Dynamic countdown timer
+  const updateCountdown = () => {
+    // Set end date to 30 days from now
+    const now = new Date()
+    const endDate = new Date()
+    endDate.setDate(endDate.getDate() + 30)
+
+    // Calculate time difference
+    const diff = endDate - now
+
+    // Calculate days, hours, minutes
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+
+    // Update DOM elements
+    document.getElementById("days").textContent = days.toString().padStart(2, "0")
+    document.getElementById("hours").textContent = hours.toString().padStart(2, "0")
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0")
+  }
+
+  // Initialize countdown
+  updateCountdown()
+
+  // Update countdown every minute
+  setInterval(updateCountdown, 60000)
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault()
+      const targetId = this.getAttribute("href")
+      if (targetId === "#") return
+
+      const targetElement = document.querySelector(targetId)
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: "smooth",
+        })
+      }
+    })
+  })
+
+  // Animation on scroll
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll(".offer-card, .testimonial-card, .limited-offer-card")
+
+    elements.forEach((element) => {
+      const elementPosition = element.getBoundingClientRect().top
+      const windowHeight = window.innerHeight
+
+      if (elementPosition < windowHeight - 100) {
+        element.style.opacity = "1"
+        element.style.transform = "translateY(0)"
+      }
+    })
+  }
+
+  // Initialize animation
+  window.addEventListener("scroll", animateOnScroll)
+  animateOnScroll() // Run once on page load
+})
+
+    </script>
+</body>
+</html>
